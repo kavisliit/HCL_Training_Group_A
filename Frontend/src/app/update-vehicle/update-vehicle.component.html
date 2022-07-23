@@ -1,0 +1,70 @@
+<div class="container-fluid add_container_fluid">
+    <div class="row justify-content-center">
+        <h3 class="text-center mt-4">Update Vehicle</h3>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-11 add_vehicle_container p-4">
+            <form>
+
+
+
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Location</span>
+                    <input type="text" class="form-control" placeholder="Location" aria-label="Location"
+                        aria-describedby="basic-addon1">
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Vehicle Number</span>
+                    <input type="text" name="vnum" class="form-control" (keyup)="checkVehilceNumber()"
+                        placeholder="Vehicle Number" aria-label="Vehicle Number" aria-describedby="basic-addon1">
+
+                </div>
+
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Maximum Passengers</span>
+                    <input type="number" class="form-control" placeholder="Passengers Limit" min="1"
+                        aria-label="Vehicle Color" aria-describedby="basic-addon1">
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Rs</span>
+
+                    <input type="text" placeholder="Price for 1Km" class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)">
+                    <span class="input-group-text">.00</span>
+                </div>
+                <h6>Select additional services</h6>
+                <div class="m-3">
+                    <label class="m-3 mt-0">AC</label><input type="checkbox" />
+                    <label class="m-3 mt-0">Baby sheet</label><input type="checkbox" />
+                    <label class="m-3 mt-0">Mini Fridge</label><input type="checkbox" />
+                    <label class="m-3 mt-0">Bevarages</label><input type="checkbox" />
+                    <label class="m-3 mt-0">Music</label><input type="checkbox" />
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Driver Name</span>
+                    <input type="text" class="form-control" placeholder="Driver Name" aria-label="Driver Name"
+                        aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Driver Contact</span>
+                    <input type="text" class="form-control" placeholder="Driver Contact number"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                </div>
+
+
+
+                <h1 class="text-center"><button class="btn btn-warning" (click)="sendData()"
+                        type="submit">Update</button></h1>
+            </form>
+        </div>
+    </div>
+</div>

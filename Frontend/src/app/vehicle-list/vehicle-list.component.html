@@ -1,0 +1,88 @@
+<div class="container-fluid all_container_fluid">
+    <div class="row justify-content-center">
+        <h1 class="text-center">All Vehicle List</h1>
+        <div class="col-3 filter_menu">
+            <div class="row">
+                <h5 class="text-center">Filter By Type</h5>
+                <div class="col-6 radio_div mb-1">
+                    <label>Car</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>SUV</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Jeep</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Van</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Bus</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Mini Van</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Pickup</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Mini Bus</label><input class="m-4" name="type" type="radio" />
+                </div>
+
+
+            </div>
+            <div class="row">
+                <h5 class="text-center mt-2">
+                    Filter By Brand
+                </h5>
+                <div class="col-6 radio_div mb-1">
+                    <label>Nissan</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Toyota</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Audi</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Benz</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Mazda</label><input class="m-4" name="type" type="radio" />
+                </div>
+                <div class="col-6 radio_div mb-1">
+                    <label>Tesla</label><input class="m-4" name="type" type="radio" />
+                </div>
+
+            </div>
+            <a class="ad-btn" routerLink="/addvehicle">add</a>
+            <a class="ad-btn" routerLink="/updatevehicle">update</a>
+
+            <div class="row">
+                <h5 class="text-center mt-2">
+                    Filter By price
+                </h5>
+                <div class="col-10">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Price per 1Km"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-warning" type="button" id="button-addon2">Filter</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-9">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-11" *ngFor="let name of car_images">
+                    <app-vehicle-card [imgName]="name"></app-vehicle-card>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

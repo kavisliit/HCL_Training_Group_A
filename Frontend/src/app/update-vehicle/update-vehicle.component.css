@@ -1,0 +1,12 @@
+.add_vehicle_container {
+    background: rgba(255, 255, 255, .7);
+    border-radius: 20px;
+
+
+}
+
+.add_container_fluid {
+    background-image: url('../../assets/Images/vehicle.jpg');
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
