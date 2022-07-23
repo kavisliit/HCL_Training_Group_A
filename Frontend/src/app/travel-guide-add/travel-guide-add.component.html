@@ -1,6 +1,6 @@
 <div class="container container-main">
     <h2>Add Travel Guide</h2>
-    <div>
+    <div class="form-div-above">
         <form>
             <div class="row">
                 <div class="col first-col">
@@ -24,8 +24,8 @@
                         </div>
                         <div class="col">
                             <label for="proimage">
-                                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" required>
-                                <img id="proPic" class="pro-pic button-shadow" src={{travel_pro_image}} onclick="getProImage()" />
+                                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required>
+                                <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" />
                             </label>
                         </div>
                     </div>
