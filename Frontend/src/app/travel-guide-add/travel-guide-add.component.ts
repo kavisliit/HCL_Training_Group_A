@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./travel-guide-add.component.css']
 })
 export class TravelGuideAddComponent implements OnInit {
+  public travel_pro_image = "../../assets/images/default-profile-pic.jpg";
+
+  getProImage(){
+    console.log("image Clicked...");
+  }
 
   constructor() { }
 
