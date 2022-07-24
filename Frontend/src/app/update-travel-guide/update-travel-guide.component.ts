@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-travel-guide-add',
-  templateUrl: './travel-guide-add.component.html',
-  styleUrls: ['./travel-guide-add.component.css']
+  selector: 'app-update-travel-guide',
+  templateUrl: './update-travel-guide.component.html',
+  styleUrls: ['./update-travel-guide.component.css']
 })
-export class TravelGuideAddComponent implements OnInit {
+export class UpdateTravelGuideComponent implements OnInit {
+
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   public travel_pro_image = "../../assets/images/default-profile-pic.jpg";
-  
+
   getProImage(event:any){
     if(event.target.files){
       var reader = new FileReader();
@@ -20,9 +22,5 @@ export class TravelGuideAddComponent implements OnInit {
         this.travel_pro_image = eventPara.target.result;
       }
     }
-  }
-
-  addGuide(){
-    console.log("add Guide Called");
   }
 }

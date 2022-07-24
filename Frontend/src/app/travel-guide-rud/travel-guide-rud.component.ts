@@ -12,7 +12,13 @@ export class TravelGuideRUDComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public inRow = 3;
+  deleteGuide(){
+    alert("Deleting");
+  }
+
+  updateGuide(){
+    alert("Updating");
+  }
 
   public travelGuidesList = [
     {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil", "French"]},

@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 10px;
-    background-image: url(../../assets/images/travel-guide-all.jpg);
+    /* background-image: url(../../assets/images/travel-guide-all.jpg); */
   }
 
 .btnAll{

@@ -1,0 +1,39 @@
+<div class="container container-main">
+    <div class="row">
+        <div class="col first-col">
+            <h1>Update Travel Guide</h1>
+        </div>
+        <div class="col second-col">
+            <label for="proimage">
+                <p>Update Image</p>
+                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required />
+                <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" />
+            </label><br>
+            <label for="">Name</label>
+            <input type="text" name="" id="" class="" />
+            <label for="">Age</label>
+            <input type="number" name="" id="" class="" />
+            <label for="">Experience Level</label>
+            <select name="" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <label>Languages</label>
+            <div class="row">
+                <div class="col-4">
+                    Sinhala<input type="checkbox" id="" name="" class="checkbox" /><br>
+                    English<input type="checkbox" id="" name="" class="checkbox" />
+                </div>
+                <div class="col">
+                    Tamil<input type="checkbox" id="" name="" class="checkbox" /><br>
+                    French<input type="checkbox" id="" name="" class="checkbox" />
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="updateBtn">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
