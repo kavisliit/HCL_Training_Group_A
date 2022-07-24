@@ -8,6 +8,7 @@ import { UpdateVehicleComponent } from './update-vehicle/update-vehicle.componen
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { OneVehicleComponent } from './one-vehicle/one-vehicle.component';
 import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
+import { HotelListComponent } from './hotel-list/hotel-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
     VehicleListComponent,
     OneVehicleComponent,
     VehicleCardComponent,
+    HotelListComponent,
   ],
   imports: [
     BrowserModule,
