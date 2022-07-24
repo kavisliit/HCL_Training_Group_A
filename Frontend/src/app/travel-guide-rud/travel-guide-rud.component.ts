@@ -12,4 +12,18 @@ export class TravelGuideRUDComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public inRow = 3;
+
+  public travelGuidesList = [
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil", "French"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Tamil", "French"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Tamil"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["French"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil", "French"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil", "French"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Tamil", "French"]},
+    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Tamil"]},
+  ];
 }
