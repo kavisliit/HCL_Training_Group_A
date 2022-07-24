@@ -1,8 +1,78 @@
-<div>
+<div class="container container-main">
     <h2>Add Travel Guide</h2>
-    <div>
+    <div class="form-div-above">
         <form>
-            <input type="text" placeholder="Enter Name" required/>
+            <div class="row">
+                <div class="col first-col">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Name" required/>
+                    <label for="name">Age</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Name" required/>
+                    <label for="name">Experience Level</label>
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="col second-col">
+                    <div class="row">
+                        <div class="col">
+                            <label>Upload Profile Picture</label>
+                        </div>
+                        <div class="col">
+                            <label for="proimage">
+                                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required>
+                                <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>Languages Speaking</label>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
+                                </div>
+                                <div class="col">
+                                    <p class="language">Sinhala</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
+                                </div>
+                                <div class="col">
+                                    <p class="language">English</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
+                                </div>
+                                <div class="col">
+                                    <p class="language">Tamil</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
+                                </div>
+                                <div class="col">
+                                    <p class="language">French</p>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn button-shadow">Add Travel Guide</button>
+            </div>
         </form>
     </div>
 </div>
