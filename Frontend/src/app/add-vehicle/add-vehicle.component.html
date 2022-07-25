@@ -2,17 +2,17 @@
     <div class="row justify-content-center">
         <h3 class="text-center mt-4">Add New Vehicle</h3>
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-11 add_vehicle_container p-4">
-            <form>
+            <form (ngSubmit)="submit()">
                 <div class="input-group mb-3 mt-4">
-                    <select class="form-select" id="inputGroupSelect02">
+                    <select class="form-select" id="inputGroupSelect02" [(ngModel)]="vehicle.type" name="type">
                         <option selected>Choose vehicle Type</option>
-                        <option value="1">Car</option>
-                        <option value="2">SUV</option>
-                        <option value="3">Jeep</option>
-                        <option value="4">Van</option>
-                        <option value="5">Bus</option>
-                        <option value="6">Mini Van</option>
-                        <option value="7">Pickup</option>
+                        <option value="Car">Car</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Van">Van</option>
+                        <option value="Bus">Bus</option>
+                        <option value="mvan">Mini Van</option>
+                        <option value="Pickup">Pickup</option>
 
                     </select>
                     <label class="input-group-text" for="inputGroupSelect02">Type</label>
@@ -20,14 +20,14 @@
 
 
                 <div class="input-group mb-3">
-                    <select class="form-select" id="inputGroupSelect02">
+                    <select class="form-select" id="inputGroupSelect02" [(ngModel)]="vehicle.brand" name="brand">
                         <option selected>Choose vehicle Brand</option>
-                        <option value="1">Nissan</option>
-                        <option value="2">Toyota</option>
-                        <option value="3">Audi</option>
-                        <option value="4">Benz</option>
-                        <option value="5">Mazda</option>
-                        <option value="6">Tesla</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Benz">Benz</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Tesla">Tesla</option>
 
 
                     </select>
@@ -36,14 +36,14 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Location</span>
-                    <input type="text" class="form-control" placeholder="Location" aria-label="Location"
-                        aria-describedby="basic-addon1">
+                    <input type="text" [(ngModel)]="vehicle.location" class="form-control" name="location"
+                        placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
                 </div>
 
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Vehicle Number</span>
-                    <input type="text" name="vnum" class="form-control" (keyup)="checkVehilceNumber()"
+                    <input type="text" name="vnum" class="form-control" [(ngModel)]="vehicle.vnumber" name="vnum"
                         placeholder="Vehicle Number" aria-label="Vehicle Number" aria-describedby="basic-addon1">
 
                 </div>
@@ -52,67 +52,67 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Maximum Passengers</span>
-                    <input type="number" class="form-control" placeholder="Passengers Limit" min="1"
-                        aria-label="Vehicle Color" aria-describedby="basic-addon1">
+                    <input type="number" class="form-control" [(ngModel)]="vehicle.capacity" name="capa"
+                        placeholder="Passengers Limit" min="1" aria-label="Vehicle Color"
+                        aria-describedby="basic-addon1">
                 </div>
 
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Rs</span>
 
-                    <input type="text" placeholder="Price for 1Km" class="form-control"
-                        aria-label="Dollar amount (with dot and two decimal places)">
+                    <input type="text" placeholder="Price for 1Km" [(ngModel)]="vehicle.price" name="price"
+                        class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
                     <span class="input-group-text">.00</span>
                 </div>
                 <h6>Select additional services</h6>
                 <div class="m-3">
-                    <label class="m-3 mt-0">AC</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Baby sheet</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Mini Fridge</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Bevarages</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Music</label><input type="checkbox" />
+                    <label class="m-3 mt-0">AC</label><input type="checkbox" [(ngModel)]="s1" name="s1" />
+                    <label class="m-3 mt-0">Baby sheet</label><input type="checkbox" [(ngModel)]="s2" name="s2" />
+                    <label class="m-3 mt-0">Mini Fridge</label><input type="checkbox" [(ngModel)]="s3" name="s3" />
+                    <label class="m-3 mt-0">Bevarages</label><input type="checkbox" [(ngModel)]="s4" name="s4" />
+                    <label class="m-3 mt-0">Music</label><input type="checkbox" [(ngModel)]="s5" name="s5" />
                 </div>
 
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Driver Name</span>
-                    <input type="text" class="form-control" placeholder="Driver Name" aria-label="Driver Name"
-                        aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" [(ngModel)]="vehicle.driver_name" name="dname"
+                        placeholder="Driver Name" aria-label="Driver Name" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Driver Contact</span>
-                    <input type="text" class="form-control" placeholder="Driver Contact number"
+                    <input type="text" class="form-control" [(ngModel)]="vehicle.driver_number" name="dnum"
+                        placeholder="Driver Contact number" aria-label="Driver Contact" aria-describedby="basic-addon1">
+                </div>
+
+                <!-- <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Main Image</span>
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getMainImage($event)"
                         aria-label="Driver Contact" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Main Image</span>
-                    <input type="file" class="form-control" placeholder="Main Image" aria-label="Driver Contact"
-                        aria-describedby="basic-addon1">
-                </div>
-
-                <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Front Image</span>
-                    <input type="file" class="form-control" placeholder="Main Image" aria-label="Driver Contact"
-                        aria-describedby="basic-addon1">
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getFImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Back Image</span>
-                    <input type="file" class="form-control" placeholder="Main Image" aria-label="Driver Contact"
-                        aria-describedby="basic-addon1">
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getBImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Inner Image</span>
-                    <input type="file" class="form-control" placeholder="Main Image" aria-label="Driver Contact"
-                        aria-describedby="basic-addon1">
-                </div>
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getIImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                </div> -->
 
 
-                <h1 class="text-center"><button class="btn btn-success" (click)="sendData()"
-                        type="submit">Create</button></h1>
+                <h1 class="text-center"><button class="btn btn-success" type="submit">Create</button></h1>
             </form>
         </div>
     </div>

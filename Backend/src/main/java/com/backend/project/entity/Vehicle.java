@@ -24,6 +24,8 @@ public class Vehicle {
     @Column
     private int capacity;
     @Column
+    private int price;
+    @Column
     private String ac;
     @Column
     private String babyseat;
@@ -38,7 +40,7 @@ public class Vehicle {
     @Column
     private String driver_number;
     @Column
-    private String Mimage;
+    private String mimage;
     @Column
     private String fimage;
     @Column
@@ -65,7 +67,7 @@ public class Vehicle {
         this.music = music;
         this.driver_name = driver_name;
         this.driver_number = driver_number;
-        Mimage = mimage;
+        this.mimage = mimage;
         this.fimage = fimage;
         this.bimage = bimage;
         this.iimage = iimage;
@@ -176,11 +178,11 @@ public class Vehicle {
     }
 
     public String getMimage() {
-        return Mimage;
+        return mimage;
     }
 
     public void setMimage(String mimage) {
-        Mimage = mimage;
+        this.mimage = mimage;
     }
 
     public String getFimage() {

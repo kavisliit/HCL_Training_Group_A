@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddVehiclePicComponent } from './add-vehicle-pic/add-vehicle-pic.component';
 import { AddVehicleComponent } from './add-vehicle/add-vehicle.component';
 import { OneVehicleComponent } from './one-vehicle/one-vehicle.component';
 import { TravelGuideAddComponent } from './travel-guide-add/travel-guide-add.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "onevehicle", component: OneVehicleComponent },
   { path: "addvehicle", component: AddVehicleComponent },
   { path: "updatevehicle", component: UpdateVehicleComponent },
+  { path: "addvehiclepic/:id", component: AddVehiclePicComponent },
 ];
 
 @NgModule({

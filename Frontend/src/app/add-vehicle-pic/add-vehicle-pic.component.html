@@ -1,0 +1,74 @@
+<h1>Add vehicle Images</h1>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class=" col-4">
+            <img [src]="vehicle.mimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('m')">
+                <div class="input-group mb-3">
+
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getMImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <button class="btn btn-warning" type="submit" *ngIf="!vehicle.mimage;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <img [src]="vehicle.fimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('f')">
+                <div class="input-group mb-3">
+
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getFImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <button class="btn btn-warning" type="submit" *ngIf="!vehicle.fimage;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-3">
+            <img [src]="vehicle.bimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('b')">
+                <div class="input-group mb-3">
+
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getBImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <button class="btn btn-warning" type="submit" *ngIf="!vehicle.bimage;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-3">
+            <img [src]="vehicle.iimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('i')">
+                <div class="input-group mb-3">
+
+                    <input type="file" class="form-control" placeholder="Main Image" (change)="getIImage($event)"
+                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <button class="btn btn-warning" type="submit" *ngIf="!vehicle.iimage;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
