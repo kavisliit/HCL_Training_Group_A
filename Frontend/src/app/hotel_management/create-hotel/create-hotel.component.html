@@ -1,0 +1,26 @@
+<div class="col-md-8 offset-md-3">
+    <h3> Create Hotel </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Hotel Name</label>
+            <input type="text" class ="form-control" id = "hotelName"
+                [(ngModel)] = "hotel.hotelName" name = "hotelName">
+        </div>
+    
+        <div class="form-group">
+            <label>Manager  Name</label>
+            <input type="text" class ="form-control" id = "managerName"
+                [(ngModel)] = "hotel.managerName" name = "managerName">
+        </div>
+    
+        <div class="form-group">
+            <label> Email Id</label>
+            <input type="text" class ="form-control" id = "emailId"
+                [(ngModel)] = "hotel.emailId" name = "emailId">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
