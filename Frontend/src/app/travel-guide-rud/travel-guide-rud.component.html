@@ -1,1 +1,31 @@
-<p>travel-guide-rud works!</p>
+<div class="container container-main">
+    <h2>See All Travel Guides</h2>
+    <div class="grid-container">
+        <div *ngFor="let guide of travelGuidesList;">
+            <div class="travelGuideCard">
+                <div class="row">
+                    <div class="col">
+                        <img src={{guide.proPic}} />
+                        <div class="btnDiv">
+                            <button class="btnAll updateBtn" (click)="updateGuide()">Update</button>
+                        </div>
+                        <div class="btnDiv">
+                            <button class="btnAll deleteBtn" (click)="deleteGuide()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4>{{guide.name}}</h4>
+                        <p>Experience Level: {{guide.experienceLevel}}</p>
+                        <p>Age: {{guide.age}}</p>
+                        <div>Languages:
+                            <div *ngFor="let l of guide.languages;">
+                                {{l}}
+                            </div>
+                        </div>    
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
