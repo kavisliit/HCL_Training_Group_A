@@ -9,6 +9,8 @@ import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { OneVehicleComponent } from './one-vehicle/one-vehicle.component';
 import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
+import { CreateHotelComponent } from './create-hotel/create-hotel.component';
+import { UpdateHotelComponent } from './update-hotel/update-hotel.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HotelListComponent } from './hotel-list/hotel-list.component';
     OneVehicleComponent,
     VehicleCardComponent,
     HotelListComponent,
+    CreateHotelComponent,
+    UpdateHotelComponent,
   ],
   imports: [
     BrowserModule,
