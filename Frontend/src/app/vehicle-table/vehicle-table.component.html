@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>No:</th>
+                        <th></th>
+                        <th>Type</th>
+                        <th>Brand</th>
+                        <th>Number</th>
+                        <th>Driver</th>
+                        <th>Driver Contact</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let v of vehicles;index as i">
+                        <td>{{(i+1)}}</td>
+                        <td>
+                            <img src="http://localhost:8070/image/{{v.mimage}}" class="img-fluid b-block" width="100" />
+                        </td>
+                        <td>{{v.type}}</td>
+                        <td>{{v.brand}}</td>
+                        <td>{{v.vnumber}}</td>
+                        <td>{{v.driver_name}}</td>
+                        <td>{{v.driver_number}}</td>
+                        <td>
+                            <a (click)="oneView(v.id)" class="btn btn-warning m-1"><i class="fa-solid fa-eye"></i></a>
+                            <a (click)="updateView(v.id)" class="btn btn-primary m-1"><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+                            <a (click)="deleteVehicle(v.id)" class="btn btn-danger m-1"><i
+                                    class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

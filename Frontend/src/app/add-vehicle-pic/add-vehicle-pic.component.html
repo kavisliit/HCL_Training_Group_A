@@ -1,14 +1,16 @@
 <h1>Add vehicle Images</h1>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class=" col-4">
+        <div class=" col-3">
+            <h4 class="text-center">Main Image</h4>
             <img [src]="vehicle.mimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
                 class="img-fluid d-block" />
             <form (ngSubmit)="mainimage('m')">
-                <div class="input-group mb-3">
+                <div class="input-group">
 
-                    <input type="file" class="form-control" placeholder="Main Image" (change)="getMImage($event)"
-                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getMImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="vehicle.mimage?{'visibility':'hidden'}:{'visibility':'visible'}">
                     <button class="btn btn-warning" type="submit" *ngIf="!vehicle.mimage;else elseblock">Add</button>
 
                     <ng-template #elseblock>
@@ -18,16 +20,17 @@
 
             </form>
         </div>
-    </div>
-    <div class="row justify-content-center">
+
         <div class="col-3">
+            <h4 class="text-center">Front Image</h4>
             <img [src]="vehicle.fimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
                 class="img-fluid d-block" />
             <form (ngSubmit)="mainimage('f')">
                 <div class="input-group mb-3">
 
-                    <input type="file" class="form-control" placeholder="Main Image" (change)="getFImage($event)"
-                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getFImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="vehicle.fimage?{'visibility':'hidden'}:{'visibility':'visible'}">
                     <button class="btn btn-warning" type="submit" *ngIf="!vehicle.fimage;else elseblock">Add</button>
 
                     <ng-template #elseblock>
@@ -38,13 +41,15 @@
         </div>
 
         <div class="col-3">
+            <h4 class="text-center">Back Image</h4>
             <img [src]="vehicle.bimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
                 class="img-fluid d-block" />
             <form (ngSubmit)="mainimage('b')">
                 <div class="input-group mb-3">
 
-                    <input type="file" class="form-control" placeholder="Main Image" (change)="getBImage($event)"
-                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getBImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="vehicle.bimage?{'visibility':'hidden'}:{'visibility':'visible'}">
                     <button class="btn btn-warning" type="submit" *ngIf="!vehicle.bimage;else elseblock">Add</button>
 
                     <ng-template #elseblock>
@@ -55,13 +60,15 @@
         </div>
 
         <div class="col-3">
+            <h4 class="text-center">Inner Image</h4>
             <img [src]="vehicle.iimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
                 class="img-fluid d-block" />
             <form (ngSubmit)="mainimage('i')">
                 <div class="input-group mb-3">
 
-                    <input type="file" class="form-control" placeholder="Main Image" (change)="getIImage($event)"
-                        aria-label="Driver Contact" aria-describedby="basic-addon1">
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getIImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="vehicle.iimage?{'visibility':'hidden'}:{'visibility':'visible'}">
                     <button class="btn btn-warning" type="submit" *ngIf="!vehicle.iimage;else elseblock">Add</button>
 
                     <ng-template #elseblock>
@@ -70,5 +77,11 @@
                 </div>
             </form>
         </div>
+
+    </div>
+    <div class="row">
+        <h1 class="text-center"><button
+                *ngIf="vehicle.mimage && vehicle.fimage && vehicle.bimage && vehicle.iimage;else elseblock"
+                (click)="proceed()" class="btn btn-primary">Proceed</button></h1>
     </div>
 </div>

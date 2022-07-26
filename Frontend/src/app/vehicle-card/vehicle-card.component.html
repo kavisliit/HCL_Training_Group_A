@@ -4,7 +4,7 @@
 
 
             <img class="img-fluid d-block col-xl-9 col-lg-7 col-md-8 col-sm-8 col-8"
-                src="../../assets/Images/{{imgname}}" />
+                src="http://localhost:8070/image/{{data.mimage}}" />
 
 
 
@@ -14,8 +14,8 @@
 
                 <div class="card-image-overlay  col-xl-10 col-lg-8 col-md-8 col-sm-8 col-8">
                     <span class="card-detail-badge">New</span>
-                    <span class="card-detail-badge">Rs.80/Km</span>
-                    <span class="card-detail-badge">VVIP</span>
+                    <span class="card-detail-badge">Rs.{{data.price}}/Km</span>
+                    <span class="card-detail-badge">{{data.capacity}}</span>
 
                 </div>
             </div>
@@ -26,9 +26,9 @@
                 <div class="col-10">
                     <div class="card-body text-center">
                         <div class="ad-title m-auto">
-                            <h5>Mercedes benz</h5>
+                            <h5>{{data.model}}</h5>
                         </div>
-                        <a class="ad-btn" routerLink="/onevehicle">View</a>
+                        <a class="ad-btn" (click)="viewVehicle(data.id)">View</a>
 
                     </div>
                 </div>

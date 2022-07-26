@@ -47,8 +47,12 @@ public class Vehicle {
     private String bimage;
     @Column
     private String iimage;
+    @Column
+    private String model;
 
     public Vehicle() {
+        this.price = 0;
+        this.capacity = 0;
     }
 
     public Vehicle(int id, String type, String brand, String location, String vnumber, int capacity, String ac,
@@ -207,6 +211,22 @@ public class Vehicle {
 
     public void setIimage(String iimage) {
         this.iimage = iimage;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
 }

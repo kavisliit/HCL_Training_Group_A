@@ -2,6 +2,7 @@ package com.backend.project.service;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -52,6 +53,34 @@ public class VehicleService {
         }
 
         return vehicleRepository.save(vehicle);
+    }
+
+    public List<Vehicle> getAllVehicles() {
+        List<Vehicle> vehicles = (List<Vehicle>) vehicleRepository.findAll();
+        return vehicles;
+    }
+
+    public Vehicle updateVehicle(Vehicle vehicle) {
+        return vehicleRepository.save(vehicle);
+    }
+
+    public void deleteVehicle(int id) {
+        vehicleRepository.deleteById(id);
+    }
+
+    public List<Vehicle> filterVehicles(String type, String brand) {
+        if (type.equals("no")) {
+            return vehicleRepository.findByBrand(brand);
+        } else if (brand.equals("no")) {
+            return vehicleRepository.findByType(type);
+        } else {
+            return vehicleRepository.findByTypeAndBrand(type, brand);
+        }
+
+    }
+
+    public List<Vehicle> filterByPrice(int price) {
+        return vehicleRepository.findByPriceLessThanEqual(price);
     }
 
 }
