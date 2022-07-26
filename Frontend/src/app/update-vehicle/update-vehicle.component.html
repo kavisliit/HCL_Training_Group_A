@@ -7,56 +7,53 @@
 
 
 
-
+                <span style="color: red;" id="locs"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Location</span>
-                    <input type="text" class="form-control" placeholder="Location" aria-label="Location"
+                    <input type="text" id="loc" [(ngModel)]="vehicle.location" class="form-control" name="loc"
+                        placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
+                </div>
+
+
+
+
+
+                <span style="color: red;" id="caps"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Maximum Passengers</span>
+                    <input name="cap" id="cap" type="number" [(ngModel)]="vehicle.capacity" class="form-control"
+                        placeholder="Passengers Limit" min="1" aria-label="Vehicle Color"
                         aria-describedby="basic-addon1">
                 </div>
 
-
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Vehicle Number</span>
-                    <input type="text" name="vnum" class="form-control" (keyup)="checkVehilceNumber()"
-                        placeholder="Vehicle Number" aria-label="Vehicle Number" aria-describedby="basic-addon1">
-
-                </div>
-
-
-
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Maximum Passengers</span>
-                    <input type="number" class="form-control" placeholder="Passengers Limit" min="1"
-                        aria-label="Vehicle Color" aria-describedby="basic-addon1">
-                </div>
-
-
+                <span style="color: red;" id="prices"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Rs</span>
 
-                    <input type="text" placeholder="Price for 1Km" class="form-control"
-                        aria-label="Dollar amount (with dot and two decimal places)">
+                    <input name="price" id="price" type="number" [(ngModel)]="vehicle.price" placeholder="Price for 1Km"
+                        class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
                     <span class="input-group-text">.00</span>
                 </div>
                 <h6>Select additional services</h6>
                 <div class="m-3">
-                    <label class="m-3 mt-0">AC</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Baby sheet</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Mini Fridge</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Bevarages</label><input type="checkbox" />
-                    <label class="m-3 mt-0">Music</label><input type="checkbox" />
+                    <label class="m-3 mt-0">AC</label><input type="checkbox" [(ngModel)]="s1" name="s1" />
+                    <label class="m-3 mt-0">Baby sheet</label><input type="checkbox" [(ngModel)]="s2" name="s2" />
+                    <label class="m-3 mt-0">Mini Fridge</label><input type="checkbox" [(ngModel)]="s3" name="s3" />
+                    <label class="m-3 mt-0">Bevarages</label><input type="checkbox" [(ngModel)]="s4" name="s4" />
+                    <label class="m-3 mt-0">Music</label><input type="checkbox" [(ngModel)]="s5" name="s5" />
                 </div>
 
-
+                <span style="color: red;" id="dnames"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Driver Name</span>
-                    <input type="text" class="form-control" placeholder="Driver Name" aria-label="Driver Name"
-                        aria-describedby="basic-addon1">
+                    <input name="dname" id="dname" type="text" [(ngModel)]="vehicle.driver_name" class="form-control"
+                        placeholder="Driver Name" aria-label="Driver Name" aria-describedby="basic-addon1">
                 </div>
-
+                <span style="color: red;" id="dnums"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Driver Contact</span>
-                    <input type="text" class="form-control" placeholder="Driver Contact number"
+                    <input (keyup)="validatednum($event)" name="dnum" id="dnum" type="text"
+                        [(ngModel)]="vehicle.driver_number" class="form-control" placeholder="Driver Contact number"
                         aria-label="Driver Contact" aria-describedby="basic-addon1">
                 </div>
 

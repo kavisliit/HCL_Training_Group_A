@@ -4,11 +4,11 @@ import { Vehicle } from '../Vehicle';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
-  selector: 'app-one-vehicle',
-  templateUrl: './one-vehicle.component.html',
-  styleUrls: ['./one-vehicle.component.css']
+  selector: 'app-view-one-vehicle',
+  templateUrl: './view-one-vehicle.component.html',
+  styleUrls: ['./view-one-vehicle.component.css']
 })
-export class OneVehicleComponent implements OnInit {
+export class ViewOneVehicleComponent implements OnInit {
   id!: number
   mimage!: string
   fimage!: string

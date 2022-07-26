@@ -10,6 +10,9 @@ import { OneVehicleComponent } from './one-vehicle/one-vehicle.component';
 import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddVehiclePicComponent } from './add-vehicle-pic/add-vehicle-pic.component';
+import { VehicleTableComponent } from './vehicle-table/vehicle-table.component';
+import { ViewOneVehicleComponent } from './view-one-vehicle/view-one-vehicle.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,9 @@ import { AddVehiclePicComponent } from './add-vehicle-pic/add-vehicle-pic.compon
     OneVehicleComponent,
     VehicleCardComponent,
     AddVehiclePicComponent,
+    VehicleTableComponent,
+    ViewOneVehicleComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

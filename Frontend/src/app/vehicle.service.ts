@@ -27,4 +27,24 @@ export class VehicleService {
     getImage(name: string): Observable<Object> {
         return this.http.get(`${this.baseUrl}/image/${name}`)
     }
+
+    getAllVehicle(): Observable<any> {
+        return this.http.get(`${this.baseUrl}`)
+    }
+
+    updateVehicle(id: number, vehicle: object): Observable<Object> {
+        return this.http.put(`${this.baseUrl}/update/${id}`, vehicle)
+    }
+
+    deleteVehicle(id: number): Observable<any> {
+        return this.http.delete(`${this.baseUrl}/delete/${id}`)
+    }
+
+    filterVehicle(ob: FormData): Observable<Object> {
+        return this.http.post(`${this.baseUrl}/filter`, ob)
+    }
+
+    filterByPrice(ob: FormData): Observable<Object> {
+        return this.http.post(`${this.baseUrl}/filterprice`, ob)
+    }
 }

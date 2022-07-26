@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Vehicle } from '../Vehicle';
+import { VehicleService } from '../vehicle.service';
 
 @Component({
   selector: 'app-vehicle-card',
@@ -7,11 +10,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VehicleCardComponent implements OnInit {
 
-  constructor() {
-    this.imgname = ''
+  constructor(private vehicleService: VehicleService, private router: Router) {
+    this.data = new Vehicle()
   }
-  @Input('imgName') imgname;
+  @Input('data') data;
   ngOnInit(): void {
+  }
+
+  viewVehicle(id: number) {
+    this.router.navigate(["onevehicle", id])
   }
 
 }

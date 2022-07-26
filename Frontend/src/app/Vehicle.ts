@@ -25,4 +25,5 @@ export class Vehicle {
     fimage!: string;
     bimage!: string;
     iimage!: string;
+    model!: string
 }

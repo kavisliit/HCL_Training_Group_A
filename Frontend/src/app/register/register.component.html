@@ -1,0 +1,45 @@
+<div class="container-fluid add_container_fluid">
+    <div class="row register_row justify-content-center align-items-center">
+        <div class="col-4 register_card">
+            <form>
+                <h3 class="text-center">Create Account</h3>
+                <h6 class="text-center mb-4">Get started with your free Account</h6>
+                <span style="color: red;" id="names"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                    <input name="i1" [(ngModel)]="user.name" type="text" id="name" class="form-control"
+                        placeholder="Name" aria-label="Driver Name" aria-describedby="basic-addon1">
+                </div>
+                <span style="color: red;" id="emails"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                    <input name="i2" [(ngModel)]="user.email" id="email" type="text" class="form-control"
+                        placeholder="Email" aria-label="Driver Name" aria-describedby="basic-addon1">
+                </div>
+                <span style="color: red;" id="nics"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
+                    <input name="i3" [(ngModel)]="user.nic" id="nic" type="text" class="form-control" placeholder="NIC"
+                        aria-label="Driver Name" aria-describedby="basic-addon1">
+                </div>
+                <span style="color: red;" id="passs"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
+                    <input name="i4" [(ngModel)]="user.password" type="password" id="pass" class="form-control"
+                        placeholder="Password" aria-label="Driver Name" aria-describedby="basic-addon1">
+                </div>
+                <span style="color: red;" id="rpasss"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
+                    <input name="i5" [(ngModel)]="repass" id="rpass" type="password" class="form-control"
+                        placeholder="Re-Enter Password" aria-label="Driver Name" aria-describedby="basic-addon1">
+                </div>
+
+
+                <h2 class="text-center"><button (click)="sendData()" class="btn btn-primary">Create Account</button>
+                </h2>
+                <p>Have an Account?<a href="#" class="text-center">Login</a></p>
+            </form>
+        </div>
+    </div>
+</div>

@@ -75,6 +75,10 @@ export class AddVehiclePicComponent implements OnInit {
     } else {
       filetype = this.Iimage
     }
+    if (!filetype) {
+      alert("Please select an Image")
+      return
+    }
     const formData: FormData = new FormData();
     formData.append('file', filetype);
     formData.append('name', type);
@@ -83,6 +87,10 @@ export class AddVehiclePicComponent implements OnInit {
     }, err => {
       console.log(err)
     })
+  }
+
+  proceed() {
+    this.router.navigate(["vehicletable"])
   }
 
 
