@@ -13,6 +13,12 @@ import { AddVehiclePicComponent } from './add-vehicle-pic/add-vehicle-pic.compon
 import { VehicleTableComponent } from './vehicle-table/vehicle-table.component';
 import { ViewOneVehicleComponent } from './view-one-vehicle/view-one-vehicle.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GalleryComponent } from './gallery/gallery.component';
+import { TripPlanComponent } from './trip-plan/trip-plan.component';
+import { BookVehicleComponent } from './book-vehicle/book-vehicle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +32,18 @@ import { RegisterComponent } from './register/register.component';
     VehicleTableComponent,
     ViewOneVehicleComponent,
     RegisterComponent,
+    LoginComponent,
+    HomeComponent,
+    GalleryComponent,
+    TripPlanComponent,
+    BookVehicleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

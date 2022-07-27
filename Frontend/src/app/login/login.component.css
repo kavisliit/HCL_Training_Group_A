@@ -1,0 +1,32 @@
+.add_container_fluid {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/Images/log.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login_card {
+    background-color: white;
+    padding: 30px;
+}
+
+.login_row {
+    height: 100vh;
+}
+
+.invalid {
+    border: 2px solid red !important;
+}
+
+.valid {
+    border: 2px solid green !important;
+}
+
+.validc {
+    color: green !important;
+}
+
+.invalidc {
+    color: red;
+}

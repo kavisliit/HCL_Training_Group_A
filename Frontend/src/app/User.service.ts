@@ -15,4 +15,8 @@ export class UserService {
         return this.http.post(`${this.baseUrl}/add`, user);
     }
 
+    loginuser(ob: FormData): Observable<Object> {
+        return this.http.post(`${this.baseUrl}/login`, ob);
+    }
+
 }

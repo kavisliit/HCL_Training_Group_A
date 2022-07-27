@@ -38,6 +38,11 @@ export class ViewOneVehicleComponent implements OnInit {
       this.iimage = temp
     }
   }
+
+  bookvehicle() {
+    this.router.navigate(["bookvehicle", this.id])
+  }
+
   getData() {
     this.vehicleService.getOneVehicle(this.id).subscribe(data => {
       let v: Vehicle = <Vehicle>data

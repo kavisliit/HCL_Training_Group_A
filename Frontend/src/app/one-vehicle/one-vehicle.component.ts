@@ -22,6 +22,10 @@ export class OneVehicleComponent implements OnInit {
     this.getData()
   }
 
+
+  bookvehicle() {
+    this.router.navigate(["bookvehicle", this.id])
+  }
   changepic(type: string) {
     var temp;
     if (type === "f") {
