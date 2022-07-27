@@ -13,30 +13,34 @@
                 <span style="color: red;" id="emails"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                    <input name="i2" [(ngModel)]="user.email" id="email" type="text" class="form-control"
-                        placeholder="Email" aria-label="Driver Name" aria-describedby="basic-addon1">
+                    <input (keyup)="emialvalidate($event)" name="i2" [(ngModel)]="user.email" id="email" type="email"
+                        class="form-control" placeholder="Email" aria-label="Driver Name"
+                        aria-describedby="basic-addon1">
                 </div>
                 <span style="color: red;" id="nics"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
-                    <input name="i3" [(ngModel)]="user.nic" id="nic" type="text" class="form-control" placeholder="NIC"
-                        aria-label="Driver Name" aria-describedby="basic-addon1">
+                    <input (keyup)="nicValidate($event)" name="i3" [(ngModel)]="user.nic" id="nic" type="text"
+                        class="form-control" placeholder="NIC" aria-label="Driver Name" aria-describedby="basic-addon1">
                 </div>
                 <span style="color: red;" id="passs"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
-                    <input name="i4" [(ngModel)]="user.password" type="password" id="pass" class="form-control"
-                        placeholder="Password" aria-label="Driver Name" aria-describedby="basic-addon1">
+                    <input name="i4" (keyup)="passwordvalidate($event)" [(ngModel)]="user.password" type="password"
+                        id="pass" class="form-control" placeholder="Password" aria-label="Driver Name"
+                        aria-describedby="basic-addon1">
                 </div>
                 <span style="color: red;" id="rpasss"></span>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
-                    <input name="i5" [(ngModel)]="repass" id="rpass" type="password" class="form-control"
-                        placeholder="Re-Enter Password" aria-label="Driver Name" aria-describedby="basic-addon1">
+                    <input name="i5" (keyup)="repassvalidate($event)" [(ngModel)]="repass" id="rpass" type="password"
+                        class="form-control" placeholder="Re-Enter Password" aria-label="Driver Name"
+                        aria-describedby="basic-addon1">
                 </div>
 
 
-                <h2 class="text-center"><button (click)="sendData()" class="btn btn-primary">Create Account</button>
+                <h2 class="text-center"><button (click)="sendData()" type="submit" class="btn btn-primary">Create
+                        Account</button>
                 </h2>
                 <p>Have an Account?<a href="#" class="text-center">Login</a></p>
             </form>
