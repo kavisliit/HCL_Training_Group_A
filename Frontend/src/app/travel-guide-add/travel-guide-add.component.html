@@ -5,23 +5,24 @@
             <div class="row">
                 <div class="col first-col">
                     <label for="name">Name</label>
-                    <input type="text" name="name" formNameControl="name" id="name" placeholder="Enter Name" required/>
+                    <input type="text" name="name" formControlName="name" id="name" placeholder="Enter Name" required/>
                     <br>
                     <span style="color: red;" *ngIf="name && name.invalid && name.touched">Enter Name with minimus 3 character</span>
                     <br>
                     <label for="name">Age</label>
-                    <input type="text" name="age" formNameControl="age" id="age" placeholder="Enter Name" required/>
+                    <input type="number" name="name" formControlName="age" id="name" placeholder="Enter Name" required/>
                     <br>
-                    <span style="color: red;" *ngIf="age && age.invalid && age.touched">Enter Age (Do not enter negative values)</span>
+                    <span style="color: red;" *ngIf="age && age.invalid && age.touched">Enter Age (Do not input Negative Values)</span>
                     <br>
-                    <label for="name">Experience Level</label>
-                    <select>
+                    <label for="exLevel">Experience Level</label>
+                    <select formControlName="exLevel">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                    <span style="color: red;" *ngIf="exLevel && exLevel.invalid && exLevel.touched">Select Experience Level</span>
                 </div>
                 <div class="col second-col">
                     <div class="row">
