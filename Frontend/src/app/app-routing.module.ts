@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddVehiclePicComponent } from './add-vehicle-pic/add-vehicle-pic.component';
 import { AddVehicleComponent } from './add-vehicle/add-vehicle.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BookVehicleComponent } from './book-vehicle/book-vehicle.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "plantrip", component: TripPlanComponent },
   { path: "bookvehicle/:id", component: BookVehicleComponent },
+  { path: "adminlogin", component: AdminLoginComponent },
+  { path: "adminhome", component: AdminHomeComponent },
 ];
 
 @NgModule({
@@ -48,5 +52,7 @@ export const routingComponents = [
   LoginComponent,
   VehicleTableComponent,
   HomeComponent,
-  TripPlanComponent
+  AdminLoginComponent,
+  TripPlanComponent,
+  AdminHomeComponent
 ];

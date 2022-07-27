@@ -1,10 +1,18 @@
-<h1>Management System</h1>
+<!-- <h1>Management System</h1>
 
-<nav>
+<nav *ngIf="nav">
   <a routerLink="/addTravelGuide">Add Travel Guide</a>
   <a routerLink="/travelGuide">Travel Guide</a>
   <a routerLink="/updateTravelGuide">Update Travel Guide</a>
+</nav> -->
+<!-- Image and text -->
+<nav class="navbar navbar-light" style="background-color: #90EE90;" *ngIf="nav">
+
+
+  <h1 style="color: white;" class="ch">Trip Master</h1>
+
 </nav>
+
 
 <router-outlet></router-outlet>
 <!-- Router Views go here | when type specific url it goes to that page-->

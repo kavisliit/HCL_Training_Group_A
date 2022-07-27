@@ -1,0 +1,13 @@
+.container-fluid {
+    background-image: url('../../assets/Images/bb.jpg');
+    background-size: cover;
+}
+
+i {
+    font-size: 80px;
+}
+
+.card {
+    cursor: pointer;
+    opacity: 0.7;
+}

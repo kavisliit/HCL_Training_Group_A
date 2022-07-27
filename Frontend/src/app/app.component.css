@@ -1,7 +1,9 @@
-nav{
+nav {
     padding-top: 10px;
     margin-bottom: 10px;
 }
+
+
 
 nav a {
     background-color: rgb(56, 114, 114);
@@ -13,6 +15,12 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover{
+nav a:hover {
     background-color: rgb(102, 194, 194);
+}
+
+.ch {
+    margin-left: 40px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 40px;
 }

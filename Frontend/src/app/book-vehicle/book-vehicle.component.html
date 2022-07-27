@@ -16,21 +16,23 @@
                         <h5 class="text-center">Enter Details</h5>
                         <div class="row justify-content-center">
                             <div class="col-8 mt-4">
+                                <span style="color: red;" id="sdates"></span>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Start Date</span>
                                     </div>
-                                    <input type="date" [(ngModel)]="sdate" class="form-control" name="n1"
+                                    <input id="sdate" type="date" [(ngModel)]="sdate" class="form-control" name="n1"
                                         placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
 
                             <div class="col-8 mt-4">
+                                <span style="color: red;" id="edates"></span>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">End Date</span>
                                     </div>
-                                    <input type="date" [(ngModel)]="edate" class="form-control" name="n2"
+                                    <input id="edate" type="date" [(ngModel)]="edate" class="form-control" name="n2"
                                         placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
@@ -41,6 +43,15 @@
 
                     </div>
                 </div>
+
+            </div>
+            <div class="row mt-4">
+                <div class="col-10">
+                    <h4 class="text-center" id="result"></h4>
+                    <h1 class="text-center"><button (click)="bookvehicle()" *ngIf="valid" class="btn btn-success">Book
+                            Vehicle</button></h1>
+                </div>
+
             </div>
 
         </div>

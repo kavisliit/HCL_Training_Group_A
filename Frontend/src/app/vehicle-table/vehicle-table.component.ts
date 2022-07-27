@@ -44,6 +44,9 @@ export class VehicleTableComponent implements OnInit {
 
 
   }
+  addvehicle() {
+    this.router.navigate(["addvehicle"])
+  }
 
   updateView(id: number) {
     this.router.navigate(["updatevehicle", id])
