@@ -34,7 +34,7 @@
 
 
                 <div class="col-3 m-4">
-                    <div class="card" (click)="showvehicle()">
+                    <div *ngIf="!have;else elseb" class="card" (click)="showvehicle()">
                         <div class="row justify-content-center">
                             <div class="col-4 mt-5">
                                 <i class="fa-solid fa-car"></i>
@@ -45,6 +45,21 @@
                         </div>
 
                     </div>
+
+                    <ng-template #elseb>
+                        <div class="card" (click)="showvehicle()">
+                            <div class="row justify-content-center">
+                                <div class="col-6 mt-5">
+                                    <img src="http://localhost:8070/image/{{vehicle.mimage}}"
+                                        class="img-fluid b-block" />
+                                </div>
+                            </div>
+                            <div class="row mt-5 mb-4">
+                                <h4 class="text-center">Vehicle Selected</h4>
+                            </div>
+
+                        </div>
+                    </ng-template>
                 </div>
 
             </div>

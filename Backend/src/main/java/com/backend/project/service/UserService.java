@@ -10,7 +10,7 @@ import com.backend.project.repository.UserRepository;
 
 @Component
 public class UserService {
-    private static final String List = null;
+
     @Autowired
     private UserRepository userRepository;
 

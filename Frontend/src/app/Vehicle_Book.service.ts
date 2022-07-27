@@ -15,6 +15,13 @@ export class Vehicle_Book {
         return this.http.post(`${this.baseUrl}/add`, book);
     }
 
+    checkavailable(book: object): Observable<Object> {
+        return this.http.post(`${this.baseUrl}/check`, book);
+    }
 
+
+    checkBookHave(uid: number): Observable<Object> {
+        return this.http.get(`${this.baseUrl}/checkhave/${uid}`)
+    }
 
 }

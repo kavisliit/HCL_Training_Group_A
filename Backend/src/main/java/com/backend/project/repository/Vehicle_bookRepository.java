@@ -10,4 +10,6 @@ public interface Vehicle_bookRepository extends CrudRepository<Vehicle_Book, Int
 
     public List<Vehicle_Book> findByVid(int vid);
 
+    public List<Vehicle_Book> findByUserid(int userid);
+
 }

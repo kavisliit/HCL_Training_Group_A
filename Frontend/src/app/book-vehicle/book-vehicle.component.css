@@ -1,0 +1,15 @@
+.invalid {
+    border: 2px solid red !important;
+}
+
+.valid {
+    border: 2px solid green !important;
+}
+
+.validc {
+    color: green !important;
+}
+
+.invalidc {
+    color: red;
+}
