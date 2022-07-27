@@ -1,31 +1,42 @@
 <div class="container container-main">
     <h2>Add Travel Guide</h2>
     <div class="form-div-above">
-        <form>
+        <form [formGroup]="addTravelGuideForm" (ngSubmit)="addGuide()">
             <div class="row">
                 <div class="col first-col">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Name" required/>
+                    <input type="text" name="name" formControlName="name" id="name" placeholder="Enter Name" required/>
+                    <br>
+                    <span style="color: red;" *ngIf="name && name.invalid && name.touched">Enter Name with minimus 3 character</span>
+                    <br>
                     <label for="name">Age</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Name" required/>
-                    <label for="name">Experience Level</label>
-                    <select>
+                    <input type="number" name="name" formControlName="age" id="name" placeholder="Enter Name" required/>
+                    <br>
+                    <span style="color: red;" *ngIf="age && age.invalid && age.touched">Enter Age (Do not input Negative Values)</span>
+                    <br>
+                    <label for="exLevel">Experience Level</label>
+                    <select formControlName="exLevel">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                    <span style="color: red;" *ngIf="exLevel && exLevel.invalid && exLevel.touched">Select Experience Level</span>
                 </div>
                 <div class="col second-col">
                     <div class="row">
                         <div class="col">
-                            <label>Upload Profile Picture</label>
+                            <label *ngIf="proimage !== null && proimage.valid; else imageError;">Upload Profile Picture</label>
+                            <ng-template #imageError>
+                                <label style="color: red;">Please upload Profile Image</label>
+                            </ng-template>
                         </div>
                         <div class="col">
                             <label for="proimage">
-                                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required>
-                                <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" />
+                                <input type="file" accept="image/*" name="proimage" formControlName="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required>
+                                <!-- <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" /> -->
+                                <img id="proPic" [ngClass]="profilePicture" *ngIf="proimage" [src]="travel_pro_image" />
                             </label>
                         </div>
                     </div>
@@ -71,7 +82,7 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn button-shadow" (click)="addGuide()">Add Travel Guide</button>
+                <button [disabled]="addTravelGuideForm.invalid" class="btn button-shadow">Add Travel Guide</button>
             </div>
         </form>
     </div>
