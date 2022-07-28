@@ -19,6 +19,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  goLogin() {
+    this.router.navigate(["login"])
+  }
 
 
   emialvalidate(ev: any) {
@@ -299,7 +302,7 @@ export class RegisterComponent implements OnInit {
 
     this.userservice.createUser(this.user).subscribe(data => {
       let v: User = <User>data
-      console.log(v)
+      this.router.navigate(["login"])
     }, err => {
       console.log(err)
     })

@@ -36,6 +36,7 @@ const routes: Routes = [
   { path: "bookvehicle/:id", component: BookVehicleComponent },
   { path: "adminlogin", component: AdminLoginComponent },
   { path: "adminhome", component: AdminHomeComponent },
+  { path: "", component: LoginComponent },
 ];
 
 @NgModule({

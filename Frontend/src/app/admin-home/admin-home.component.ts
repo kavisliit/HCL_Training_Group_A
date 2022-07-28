@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class AdminHomeComponent implements OnInit {
 
+  nav: boolean = true
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem("aid")) {
+      location.href = "adminlogin"
+    }
   }
   showvehicle() {
     this.router.navigate(["vehicletable"])
