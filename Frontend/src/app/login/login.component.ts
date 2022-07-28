@@ -43,6 +43,9 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+  goreg() {
+    this.router.navigate(["register"])
+  }
 
   login() {
     let brand = document.getElementById("emails")
@@ -96,7 +99,8 @@ export class LoginComponent implements OnInit {
         alert("Email or Password is Wrong!!!")
       } else {
         localStorage.setItem("uid", v.id.toString())
-        this.router.navigate(["home"])
+        // this.router.navigate(["home"])
+        location.href = "home"
       }
     }, err => {
       console.log(err)

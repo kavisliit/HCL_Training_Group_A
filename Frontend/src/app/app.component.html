@@ -6,10 +6,15 @@
   <a routerLink="/updateTravelGuide">Update Travel Guide</a>
 </nav> -->
 <!-- Image and text -->
-<nav class="navbar navbar-light" style="background-color: #90EE90;" *ngIf="nav">
+<nav class="navbar navbar-light" style="background-color: #D2691E;" *ngIf="nav">
 
 
   <h1 style="color: white;" class="ch">Trip Master</h1>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="btn btn-danger logout" (click)="logout()">Logout</a>
+    </li>
+  </ul>
 
 </nav>
 

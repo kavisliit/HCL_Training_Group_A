@@ -13,3 +13,23 @@
 .invalidc {
     color: red;
 }
+
+.get {
+    margin-bottom: 80px;
+    background: rgba(255, 255, 255, .7);
+}
+
+#result {
+    background: rgba(255, 255, 255, .7);
+}
+
+.re {
+    height: 100% !important;
+}
+
+.container-fluid {
+    background-image: url('../../assets/Images/vehicle.jpg');
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+
+}

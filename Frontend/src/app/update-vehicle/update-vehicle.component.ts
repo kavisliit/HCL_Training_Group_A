@@ -124,8 +124,27 @@ export class UpdateVehicleComponent implements OnInit {
 
     this.setcheckboxs()
 
-    let brand = document.getElementById("caps")
-    let inp = document.getElementById("cap")
+
+    let brand = document.getElementById("locas")
+    let inp = document.getElementById("loca")
+    if (!this.vehicle.location) {
+
+
+      if (brand && inp) {
+        brand.innerHTML = "Please Enter the Vehicle Location"
+        inp.classList.add("invalid")
+      }
+      return
+    } else {
+      if (brand && inp) {
+        brand.innerHTML = ""
+        inp.classList.remove("invalid")
+      }
+
+    }
+
+    brand = document.getElementById("caps")
+    inp = document.getElementById("cap")
     if (!this.vehicle.capacity) {
 
 
@@ -142,23 +161,7 @@ export class UpdateVehicleComponent implements OnInit {
 
     }
 
-    brand = document.getElementById("locas")
-    inp = document.getElementById("loca")
-    if (!this.vehicle.location) {
 
-
-      if (brand && inp) {
-        brand.innerHTML = "Please Enter the Vehicle Location"
-        inp.classList.add("invalid")
-      }
-      return
-    } else {
-      if (brand && inp) {
-        brand.innerHTML = ""
-        inp.classList.remove("invalid")
-      }
-
-    }
 
 
     brand = document.getElementById("prices")

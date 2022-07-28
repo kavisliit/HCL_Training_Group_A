@@ -1,0 +1,12 @@
+.container-fluid {
+    background-image: url('../../assets/Images/vehicle.jpg');
+    background-size: cover;
+}
+
+h4 {
+    font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+}

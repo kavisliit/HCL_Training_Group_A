@@ -96,7 +96,7 @@ export class AdminLoginComponent implements OnInit {
         alert("Email or Password is Wrong!!!")
       } else {
         localStorage.setItem("aid", v.id.toString())
-        this.router.navigate(["home"])
+        location.href = "adminhome"
       }
     }, err => {
       console.log(err)

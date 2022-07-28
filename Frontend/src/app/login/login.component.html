@@ -18,10 +18,11 @@
                     <input name="n2" [(ngModel)]="password" id="pass" type="password" class="form-control"
                         placeholder="Password" aria-label="Driver Name" aria-describedby="basic-addon1">
                 </div>
-                <a href="#" class="text-center">forget password</a>
+
 
                 <h2 class="text-center"><button class="btn btn-primary" (click)="login()">Login</button></h2>
             </form>
+            <p style="cursor: pointer;">Dont Have an Account?<a (click)="goreg()" class="text-center">Register</a></p>
         </div>
     </div>
 </div>

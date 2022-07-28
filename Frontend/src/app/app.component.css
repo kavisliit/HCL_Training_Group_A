@@ -1,4 +1,4 @@
-nav {
+/* nav {
     padding-top: 10px;
     margin-bottom: 10px;
 }
@@ -6,7 +6,7 @@ nav {
 
 
 nav a {
-    background-color: rgb(56, 114, 114);
+
     color: white;
     padding: 10px 30px;
     margin-left: 6px;
@@ -17,6 +17,10 @@ nav a {
 
 nav a:hover {
     background-color: rgb(102, 194, 194);
+} */
+
+.logout {
+    margin-right: 60px;
 }
 
 .ch {
