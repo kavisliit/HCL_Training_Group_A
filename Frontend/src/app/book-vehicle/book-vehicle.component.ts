@@ -22,6 +22,9 @@ export class BookVehicleComponent implements OnInit {
   constructor(private vehiclebook: Vehicle_Book, private vehicleService: VehicleService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem("uid")) {
+      location.href = "login"
+    }
     this.id = this.route.snapshot.params['id']
     this.uid = Number(localStorage.getItem("uid"))
     this.getData()
@@ -100,7 +103,7 @@ export class BookVehicleComponent implements OnInit {
     this.vehiclebook.addbooking(this.book).subscribe(data => {
       let v: Vehicle_books = <Vehicle_books>data
       alert("Vehicle Booked Successfully")
-      this.router.navigate(["allvehicle"])
+      this.router.navigate(["plantrip"])
     }, err => {
       console.log(err)
     })

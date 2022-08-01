@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   nav: boolean = true;
   admin: boolean = false
   ngOnInit(): void {
-    if (window.location.href === 'http://localhost:4200/login' || window.location.href === 'http://localhost:4200/register' || window.location.href === 'http://localhost:4200/adminlogin') {
+    if (window.location.href === 'http://localhost:4200/login' || window.location.href === 'http://localhost:4200/' || window.location.href === 'http://localhost:4200/register' || window.location.href === 'http://localhost:4200/adminlogin') {
       this.nav = false
     }
     if (window.location.href === 'http://localhost:4200/home' || window.location.href === 'http://localhost:4200/adminhome') {
