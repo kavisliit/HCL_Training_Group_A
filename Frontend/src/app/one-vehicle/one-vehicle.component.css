@@ -29,3 +29,7 @@ tr {
 .services .col-4 {
     margin-bottom: 30px;
 }
+
+img {
+    cursor: pointer;
+}

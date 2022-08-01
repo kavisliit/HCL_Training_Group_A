@@ -1,5 +1,5 @@
 .add_container_fluid {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/Images/log.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/Images/admin.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;

@@ -18,6 +18,9 @@ export class OneVehicleComponent implements OnInit {
   constructor(private vehicleService: VehicleService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem("uid")) {
+      location.href = "login"
+    }
     this.id = this.route.snapshot.params['id']
     this.getData()
   }

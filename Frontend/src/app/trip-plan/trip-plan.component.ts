@@ -19,6 +19,9 @@ export class TripPlanComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!localStorage.getItem("uid")) {
+      location.href = "login"
+    }
     this.uid = Number(localStorage.getItem("uid"))
     this.checkBookings()
   }
