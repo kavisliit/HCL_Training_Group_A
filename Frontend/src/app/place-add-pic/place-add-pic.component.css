@@ -1,0 +1,13 @@
+.container-fluid {
+    background-image: url('../../assets/Images/place.jpg');
+    background-size: cover;
+}
+
+h4 {
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+}

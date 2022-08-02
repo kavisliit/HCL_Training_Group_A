@@ -1,0 +1,41 @@
+<div class="container-fluid" style="background-color: #F5F5F5;">
+    <div class="row justify-content-center">
+        <h1 class="text-left"><button (click)="addvehicle()" class="btn btn-primary">Add Place</button></h1>
+        <div class="col-10">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>No:</th>
+                        <th></th>
+
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Province</th>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let v of places;index as i">
+                        <td>{{(i+1)}}</td>
+                        <td>
+                            <img src="http://localhost:8070/image/{{v.mimage}}" class="img-fluid b-block" />
+                        </td>
+
+                        <td>{{v.name}}</td>
+                        <td>{{v.city}}</td>
+                        <td>{{v.province}}</td>
+                        <td>{{v.description}}</td>
+                        <td>
+                            <a (click)="oneView(v.id)" class="btn btn-warning m-1"><i class="fa-solid fa-eye"></i></a>
+                            <a (click)="updateView(v.id)" class="btn btn-primary m-1"><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+                            <a (click)="deleteVehicle(v.id)" class="btn btn-danger m-1"><i
+                                    class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

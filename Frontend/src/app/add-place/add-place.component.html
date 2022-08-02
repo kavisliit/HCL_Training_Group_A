@@ -1,0 +1,64 @@
+<div class="container-fluid add_container_fluid">
+    <div class="row justify-content-center">
+        <h1 class="text-center mt-4" style="color: white;">Add New Place</h1>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-11 add_vehicle_container p-4">
+            <form (ngSubmit)="submit()" class="mt-4 mb-5">
+                <span style="color: red;" id="types"></span>
+                <div class="input-group mb-3">
+
+                    <select class=" form-select" id="type" [(ngModel)]="place.type" name="type">
+
+                        <option value="re">Religous places</option>
+                        <option value="na">Natural areas</option>
+                        <option value="to">Towns and cities</option>
+                        <option value="cu">Culture and heritage.</option>
+                        <option value="be">Beach</option>
+
+
+                    </select>
+                    <label class="input-group-text" for="inputGroupSelect02">Type</label>
+
+                </div>
+
+
+
+
+                <span style="color: red;" id="names"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Name</span>
+                    <input type="text" [(ngModel)]="place.name" id="name" class="form-control" name="model"
+                        placeholder="Name" aria-label="Location" aria-describedby="basic-addon1">
+                </div>
+
+
+                <span style="color: red;" id="pros"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Province</span>
+                    <input type="text" [(ngModel)]="place.province" id="pro" class="form-control" name="location"
+                        placeholder="Province" aria-label="Location" aria-describedby="basic-addon1">
+                </div>
+
+                <span style="color: red;" id="citys"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">City</span>
+                    <input type="text" name="city" id="city" class="form-control" [(ngModel)]="place.city" name="vnum"
+                        placeholder="City" aria-label="Vehicle Number" aria-describedby="basic-addon1">
+
+                </div>
+
+
+
+
+                <span style="color: red;" id="dess"></span>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Description</span>
+                    <input type="text" id="des" class="form-control" [(ngModel)]="place.description" name="dname"
+                        placeholder="Description" aria-label="Driver Name" aria-describedby="basic-addon1">
+                </div>
+
+
+                <h1 class="text-center"><button class="btn btn-success" type="submit">Create</button></h1>
+            </form>
+        </div>
+    </div>
+</div>

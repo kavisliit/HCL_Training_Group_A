@@ -4,7 +4,7 @@
             <h1 class="text-center">Plan Your Vacation</h1>
             <div class="row justify-content-center">
                 <div class=" col-3 m-4">
-                    <div class="card">
+                    <div class="card" (click)="showplace()" *ngIf="!havetrip;else elses">
                         <div class="row justify-content-center">
                             <div class="col-4 mt-5">
                                 <i class="fa-solid fa-map-location-dot"></i>
@@ -15,6 +15,20 @@
                         </div>
 
                     </div>
+
+                    <ng-template #elses>
+                        <div class="card" (click)="showplace()">
+                            <div class="row justify-content-center">
+                                <div class="col-6 mt-5">
+                                    <img src="http://localhost:8070/image/{{pic}}" class="img-fluid b-block" />
+                                </div>
+                            </div>
+                            <div class="row mt-5 mb-4">
+                                <h4 class="text-center">Places Selected</h4>
+                            </div>
+
+                        </div>
+                    </ng-template>
                 </div>
 
 
@@ -98,6 +112,7 @@
 
 
             </div>
+            <h1 class="text-center"><button class="btn btn-primary">Confirm Booking</button></h1>
         </div>
     </div>
 </div>
