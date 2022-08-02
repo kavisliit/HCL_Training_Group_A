@@ -1,0 +1,28 @@
+.add_vehicle_container {
+    background: rgba(255, 255, 255, .7);
+    border-radius: 20px;
+
+
+}
+
+.add_container_fluid {
+    background-image: url('../../assets/Images/place.jpg');
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.invalid {
+    border: 2px solid red !important;
+}
+
+.valid {
+    border: 2px solid green !important;
+}
+
+.validc {
+    color: green !important;
+}
+
+.invalidc {
+    color: red;
+}

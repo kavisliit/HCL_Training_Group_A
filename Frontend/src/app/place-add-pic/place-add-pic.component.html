@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="row justify-content-center mt-3">
+        <h1 class="text-center mb-5" style="color: white;">Add place Images</h1>
+        <div class=" col-3">
+            <h4 class="text-center">Main Image</h4>
+            <img [src]="place.mimage?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('m')">
+                <div class="input-group">
+
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getMImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="place.mimage?{'visibility':'hidden'}:{'visibility':'visible'}">
+                    <button class="btn btn-warning" type="submit" *ngIf="!place.mimage;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-3">
+            <h4 class="text-center">Other Image</h4>
+            <img [src]="place.image1?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('f')">
+                <div class="input-group mb-3">
+
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getFImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="place.image1?{'visibility':'hidden'}:{'visibility':'visible'}">
+                    <button class="btn btn-warning" type="submit" *ngIf="!place.image1;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-3">
+            <h4 class="text-center">Other Image</h4>
+            <img [src]="place.image2?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('b')">
+                <div class="input-group mb-3">
+
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getBImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="place.image2?{'visibility':'hidden'}:{'visibility':'visible'}">
+                    <button class="btn btn-warning" type="submit" *ngIf="!place.image2;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-3">
+            <h4 class="text-center">Other Image</h4>
+            <img [src]="place.image3?' ../../assets/Images/ok.png':'../../assets/Images/nimage.png'"
+                class="img-fluid d-block" />
+            <form (ngSubmit)="mainimage('i')">
+                <div class="input-group mb-3">
+
+                    <input type="file" required class="form-control" placeholder="Main Image"
+                        (change)="getIImage($event)" aria-label="Driver Contact" aria-describedby="basic-addon1"
+                        [ngStyle]="place.image3?{'visibility':'hidden'}:{'visibility':'visible'}">
+                    <button class="btn btn-warning" type="submit" *ngIf="!place.image3;else elseblock">Add</button>
+
+                    <ng-template #elseblock>
+
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <h1 class="text-center"><button
+                *ngIf="place.mimage && place.image1 && place.image2 && place.image3;else elseblock" (click)="proceed()"
+                class="btn btn-primary">Proceed</button></h1>
+    </div>
+</div>
