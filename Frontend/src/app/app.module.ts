@@ -21,6 +21,7 @@ import { TripPlanComponent } from './trip-plan/trip-plan.component';
 import { BookVehicleComponent } from './book-vehicle/book-vehicle.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { TravelGuideService } from './travel-guide.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [TravelGuideService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

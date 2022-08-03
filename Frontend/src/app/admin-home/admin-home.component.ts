@@ -20,4 +20,8 @@ export class AdminHomeComponent implements OnInit {
     this.router.navigate(["vehicletable"])
   }
 
+  travelGuide(){
+    this.router.navigate(['addTravelGuide'])
+  }
+
 }
