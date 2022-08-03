@@ -15,6 +15,7 @@ import { PlaceTableComponent } from './place-table/place-table.component';
 import { PlaceUserComponent } from './place-user/place-user.component';
 import { PlacesComponent } from './places/places.component';
 import { RegisterComponent } from './register/register.component';
+import { SummaryComponent } from './summary/summary.component';
 import { TravelGuideAddComponent } from './travel-guide-add/travel-guide-add.component';
 import { TravelGuideRUDComponent } from './travel-guide-rud/travel-guide-rud.component';
 import { TripPlanComponent } from './trip-plan/trip-plan.component';
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: "placetable", component: PlaceTableComponent },
   { path: "placelist", component: PlacesComponent },
   { path: "useroneplace/:id", component: PlaceUserComponent },
+  { path: "summary/:id", component: SummaryComponent },
 ];
 
 @NgModule({
@@ -71,5 +73,6 @@ export const routingComponents = [
   TripPlanComponent,
   AdminHomeComponent,
   AddPlaceComponent,
-  PlacesComponent
+  PlacesComponent,
+  SummaryComponent
 ];

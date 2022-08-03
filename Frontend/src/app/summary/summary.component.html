@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class=" col-6 card mt-4">
+            <h3 class="text-center mb-4 mt-3">Destinations</h3>
+            <table class="table table-hover mb-4">
+                <tbody *ngFor="let p of places">
+                    <tr class="mb-2">
+                        <td><img src="http://localhost:8070/image/{{p.mimage}}" width="150" class="img-fluid d-block">
+                        </td>
+                        <td>{{p.name}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="text-center mb-4 mt-3">Vehicle</h3>
+            <table class="table table-hover mb-4">
+                <tbody>
+                    <tr>
+                        <td><img src="http://localhost:8070/image/{{vehicle.mimage}}" width="150"
+                                class="img-fluid d-block"></td>
+                        <td>{{vehicle.model}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h1 class="text-center"><button class="btn btn-success" (click)="finish()"> Finish</button></h1>
+
+        </div>
+    </div>
+</div>

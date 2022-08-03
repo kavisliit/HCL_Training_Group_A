@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
     }
     else if (localStorage.getItem("aid")) {
       localStorage.removeItem("aid")
+      localStorage.removeItem("cart")
       location.href = "/adminlogin"
     }
   }
