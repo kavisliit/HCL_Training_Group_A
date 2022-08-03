@@ -16,6 +16,9 @@ export class VehicleListComponent implements OnInit {
   brand: string = ''
 
   ngOnInit(): void {
+    if (!localStorage.getItem("uid")) {
+      location.href = "login"
+    }
     this.getData()
   }
   constructor(private vehicleService: VehicleService, private router: Router) {

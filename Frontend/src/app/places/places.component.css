@@ -1,0 +1,18 @@
+.all_container_fluid {
+    background-image: url('../../assets/Images/place.jpg');
+    background-size: cover;
+    height: max-content;
+    font-family: 'Roboto', sans-serif;
+}
+
+.filter_menu {
+    background: rgba(255, 255, 255, .5);
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 90px;
+}
+
+.radio_div {
+    background-color: rgba(218, 218, 218, .8);
+    border-radius: 20px;
+}

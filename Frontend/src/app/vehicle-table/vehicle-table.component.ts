@@ -15,6 +15,9 @@ export class VehicleTableComponent implements OnInit {
   constructor(private vehicleService: VehicleService, private router: Router) { }
   vehicle: Vehicle = new Vehicle()
   ngOnInit(): void {
+    if (!localStorage.getItem("aid")) {
+      location.href = "adminlogin"
+    }
     this.loadData()
   }
 

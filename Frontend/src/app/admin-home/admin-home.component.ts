@@ -23,5 +23,9 @@ export class AdminHomeComponent implements OnInit {
   travelGuide(){
     this.router.navigate(['addTravelGuide'])
   }
+  
+  showplace() {
+    this.router.navigate(["placetable"])
+  }
 
 }

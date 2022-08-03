@@ -17,6 +17,9 @@ export class UpdateVehicleComponent implements OnInit {
   s5!: boolean;
   vehicle!: Vehicle
   ngOnInit(): void {
+    if (!localStorage.getItem("aid")) {
+      location.href = "adminlogin"
+    }
     this.id = this.route.snapshot.params['id']
     this.getData()
   }

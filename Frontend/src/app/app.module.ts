@@ -22,6 +22,15 @@ import { BookVehicleComponent } from './book-vehicle/book-vehicle.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { TravelGuideService } from './travel-guide.service';
+import { PlacesComponent } from './places/places.component';
+import { PlaceCardComponent } from './place-card/place-card.component';
+import { AddPlaceComponent } from './add-place/add-place.component';
+import { PlaceTableComponent } from './place-table/place-table.component';
+import { PlaceAddPicComponent } from './place-add-pic/place-add-pic.component';
+import { OnePlaceComponent } from './one-place/one-place.component';
+import { UpdatePlaceComponent } from './update-place/update-place.component';
+import { PlaceUserComponent } from './place-user/place-user.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +52,15 @@ import { TravelGuideService } from './travel-guide.service';
     BookVehicleComponent,
     AdminLoginComponent,
     AdminHomeComponent,
+    PlacesComponent,
+    PlaceCardComponent,
+    AddPlaceComponent,
+    PlaceTableComponent,
+    PlaceAddPicComponent,
+    OnePlaceComponent,
+    UpdatePlaceComponent,
+    PlaceUserComponent,
+    SummaryComponent,
 
   ],
   imports: [

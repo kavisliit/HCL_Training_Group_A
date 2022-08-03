@@ -25,7 +25,9 @@ export class AddVehicleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    if (!localStorage.getItem("aid")) {
+      location.href = "adminlogin"
+    }
   }
 
   setcheckboxs() {

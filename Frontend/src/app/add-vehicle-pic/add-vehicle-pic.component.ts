@@ -35,6 +35,9 @@ export class AddVehiclePicComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if (!localStorage.getItem("aid")) {
+      location.href = "adminlogin"
+    }
     this.id = this.route.snapshot.params['id']
     this.initialData()
   }

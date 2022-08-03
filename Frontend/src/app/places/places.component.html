@@ -1,0 +1,77 @@
+<div class="container-fluid all_container_fluid">
+    <div class="row justify-content-center">
+        <h1 class="text-center" style="color: white;">Places List</h1>
+        <div class="col-3 filter_menu">
+            <div class="row">
+                <h5 class="text-center">Filter By Type</h5>
+
+                <div class="col-12 radio_div mb-1">
+                    <input class="m-4" name="type" type="radio" id="r1" (change)="filterType($event)"
+                        value="re" /><label>Religous places</label>
+                </div>
+                <div class="col-12 radio_div mb-1">
+                    <input class="m-4" name="type" type="radio" id="r2" (change)="filterType($event)"
+                        value="na" /><label>Natural areas</label>
+                </div>
+                <div class="col-12 radio_div mb-1">
+                    <input class="m-4" name="type" type="radio" (change)="filterType($event)" value="to" /><label>Towns
+                        and Cities</label>
+                </div>
+                <div class="col-12 radio_div mb-1">
+                    <input class="m-4" name="type" type="radio" (change)="filterType($event)"
+                        value="cu" /><label>Culture and Heritage</label>
+                </div>
+                <div class="col-12 radio_div mb-1">
+                    <input class="m-4" name="type" type="radio" (change)="filterType($event)"
+                        value="be" /><label>Beach</label>
+                </div>
+
+
+
+
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-10">
+                    <div *ngIf="showlist">
+                        <h2 class="text-center">My List</h2>
+                        <div *ngFor="let p of listplaces">
+                            <div class="row p-2 mb-2" style="background-color: white;">
+
+
+                                <div class="col-4">
+
+                                    <img src="http://localhost:8070/image/{{p.mimage}}" class="img-fluid d-block" />
+                                </div>
+                                <div class="col-5">
+                                    {{p.name}}
+
+                                </div>
+                                <div class="col-1">
+                                    <i class="fa-solid fa-xmark" (click)="deleteplace(p.id)"
+                                        style="cursor: pointer;"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-9">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-11" *ngFor="let place of places">
+                    <app-place-card [data]="place"></app-place-card>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.add_container_fluid {
+    background-image: url('../../assets/Images/place.jpg');
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pic_div {
+    background: rgba(255, 255, 255, .7) !important;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.book_form {
+    background: rgba(255, 255, 255, .9) !important;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+tr {
+    padding: 10px !important;
+}
+
+.book_form i {
+    font-size: 50px;
+    color: black;
+}
+
+.services .col-4 {
+    margin-bottom: 30px;
+}
+
+img {
+    cursor: pointer;
+}
