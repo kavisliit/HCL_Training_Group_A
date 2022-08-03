@@ -6,19 +6,22 @@
         <div class="col second-col">
             <label for="proimage">
                 <p>Update Image</p>
-                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required />
-                <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" />
+                <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" [(ngModel)]="guide.guideImage" (change)="getProImage($event)" required />
+                <img id="proPic" class="pro-pic button-shadow" [src]="guide.guideImage" />
+                <!-- <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" /> -->
             </label><br>
             <label for="">Name</label>
-            <input type="text" name="" id="" class="" />
+            <input type="text" name="" id="" class="" value="{{guide.guideName}}" [(ngModel)]="guide.guideName" />
             <label for="">Age</label>
-            <input type="number" name="" id="" class="" />
+            <input type="number" name="" id="" value="{{guide.age}}" [(ngModel)]="guide.age" class="" />
             <label for="">Experience Level</label>
-            <select name="" id="">
+            <select name="" id="" [(ngModel)]="guide.guideLevel">
+                <option selected value="{{guide.guideLevel}}">{{guide.guideLevel}}</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5</option>
             </select>
             <label>Languages</label>
             <div class="row">
@@ -32,7 +35,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit" class="updateBtn">Update</button>
+                <button type="submit" class="updateBtn" (click)="updateGuide()">Update</button>
             </div>
         </div>
     </div>

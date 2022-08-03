@@ -1,21 +1,24 @@
 <div class="container container-main">
+    <div class="row">
+        <button class="seeGuidesBtn" (click)="redirectSeeAllGuides()">See Travel Guides</button>
+    </div>
     <h2>Add Travel Guide</h2>
     <div class="form-div-above">
         <form [formGroup]="addTravelGuideForm" (ngSubmit)="addGuide()">
             <div class="row">
                 <div class="col first-col">
                     <label for="name">Name</label>
-                    <input type="text" name="name" formControlName="name" id="name" placeholder="Enter Name" required/>
+                    <input type="text" name="name" formControlName="name" [(ngModel)]="guide.guideName" id="name" placeholder="Enter Name" required/>
                     <br>
                     <span style="color: red;" *ngIf="name && name.invalid && name.touched">Enter Name with minimus 3 character</span>
                     <br>
                     <label for="name">Age</label>
-                    <input type="number" name="name" formControlName="age" id="name" placeholder="Enter Name" required/>
+                    <input type="number" name="name" formControlName="age" id="name" [(ngModel)]="guide.age" placeholder="Enter Name" required/>
                     <br>
                     <span style="color: red;" *ngIf="age && age.invalid && age.touched">Enter Age (Do not input Negative Values)</span>
                     <br>
                     <label for="exLevel">Experience Level</label>
-                    <select formControlName="exLevel">
+                    <select formControlName="exLevel" [(ngModel)]="guide.guideLevel">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -34,7 +37,7 @@
                         </div>
                         <div class="col">
                             <label for="proimage">
-                                <input type="file" accept="image/*" name="proimage" formControlName="proimage" id="proimage" class="pro-Pic-Upload" (change)="getProImage($event)" required>
+                                <input type="file" accept="image/*" name="proimage" formControlName="proimage" id="proimage" class="pro-Pic-Upload" [(ngModel)]="guide.guideImage" (change)="getProImage($event)" required>
                                 <!-- <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" /> -->
                                 <img id="proPic" [ngClass]="profilePicture" *ngIf="proimage" [src]="travel_pro_image" />
                             </label>
@@ -44,7 +47,7 @@
                         <div class="col">
                             <label>Languages Speaking</label>
                         </div>
-                        <div class="col">
+                        <!-- <div class="col">
                             <div class="row">
                                 <div class="col">
                                     <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
@@ -77,12 +80,20 @@
                                     <p class="language">French</p>
                                 </div>
                             </div>                            
-                        </div>
+                        </div> -->
+                        <ul *ngFor="let l of langList;" style="list-style: none;">
+                            <li>
+                                <input [(ngModel)]="l.isChecked" (change)="changeSelection(l.langId)" type="checkbox" id="languages-sin" name="languages" class="languages-check" ><span style="color: white;">{{l.label}}</span>
+                            </li>     
+                        </ul>
+                        <!-- <div *ngFor="let l of selectedLanguages;">
+                            {{l}}
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="row">
-                <button [disabled]="addTravelGuideForm.invalid" class="btn button-shadow">Add Travel Guide</button>
+                <button [disabled]="addTravelGuideForm.invalid" class="btn button-shadow" (click)="addTravelGuide()">Add Travel Guide</button>
             </div>
         </form>
     </div>

@@ -20,6 +20,10 @@ export class AdminHomeComponent implements OnInit {
     this.router.navigate(["vehicletable"])
   }
 
+  travelGuide(){
+    this.router.navigate(['addTravelGuide'])
+  }
+  
   showplace() {
     this.router.navigate(["placetable"])
   }

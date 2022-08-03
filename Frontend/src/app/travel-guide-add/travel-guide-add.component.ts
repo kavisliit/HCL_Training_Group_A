@@ -1,18 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { Guide } from '../guide';
+import { TravelGuideService } from '../travel-guide.service';
 @Component({
   selector: 'app-travel-guide-add',
   templateUrl: './travel-guide-add.component.html',
   styleUrls: ['./travel-guide-add.component.css']
 })
 export class TravelGuideAddComponent implements OnInit {
-  constructor() { }
+  constructor(
+    private router: Router,
+    private service: TravelGuideService
+  ) { }
 
   ngOnInit(): void {}
 
+  guide: Guide = new Guide();
+  public message:any;
+  public selectedItemsList:any = [];
+  public selectedLanguages:any = [];
+
   public travel_pro_image = "../../assets/images/default-profile-pic.jpg";
   
+  redirectSeeAllGuides(){
+    this.router.navigate(['travelGuide'])
+  }
+
   getProImage(event:any){
     if(event.target.files){
       var reader = new FileReader();
@@ -57,4 +71,35 @@ export class TravelGuideAddComponent implements OnInit {
   get proimage(){
     return this.addTravelGuideForm.get('proimage')
   }
+
+  langList = [
+    {langId: 1, label: "English", isChecked: false},
+    {langId: 2, label: "Sinhala", isChecked: false},
+    {langId: 3, label: "Tamil", isChecked: false},
+    {langId: 4, label: "French", isChecked: false}
+  ];
+
+  public changeSelection(id:number){
+    for(let i=0; i<this.langList.length; i++){
+      if(this.langList[i].langId == id){
+        this.langList[i].isChecked = !this.langList[i].isChecked;
+      }
+    }
+    this.selectedItemsList = this.langList.filter((value, index) => {
+      return value.isChecked;
+    });
+    this.selectedLanguages = this.selectedItemsList.map((item: { label: any; }) => {
+      return item.label;
+    });
+    this.guide.languages = this.selectedLanguages;
+    console.log(this.selectedItemsList);
+  }
+
+  //========== Calling Backend Api ===================================================================
+  //add travel Guide
+  public addTravelGuide(){
+    let response = this.service.addTravelGuide(this.guide);
+    response.subscribe(data => this.message = data);
+  }
+
 }

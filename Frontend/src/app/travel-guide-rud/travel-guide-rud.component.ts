@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TravelGuideService } from '../travel-guide.service';
 
 @Component({
   selector: 'app-travel-guide-rud',
@@ -7,26 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TravelGuideRUDComponent implements OnInit {
 
-  constructor() { }
+  public travelGuides: any = [];
+  public deleteMessage:any = "";
+
+  constructor(private router: Router, private service: TravelGuideService) { }
 
   ngOnInit(): void {
+    this.service.getAllTravelGuides().subscribe(data => this.travelGuides = data);
   }
 
-  deleteGuide(){
-    alert("Deleting");
+  redirectAddGuides(){
+    this.router.navigate(['addTravelGuide'])
+  }
+
+  deleteGuide(id:number){
+    this.service.deleteGuide(id).subscribe(data => this.deleteMessage = data);
+    this.service.getAllTravelGuides().subscribe(data => this.travelGuides = data);
   }
 
   updateGuide(){
     alert("Updating");
   }
-
-  public travelGuidesList = [
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil", "French"]},
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil"]},
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Tamil", "French"]},
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Tamil"]},
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["French"]},
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["French"]},
-    {name: "Jonny Jonny", age: 22, experienceLevel: 2, proPic: "../../assets/images/dummyImg.jpg", languages: ["Sinhala", "English", "Tamil"]},
-  ];
 }

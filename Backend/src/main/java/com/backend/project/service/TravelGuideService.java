@@ -36,6 +36,8 @@ public class TravelGuideService {
         g.setAge(guide.getAge());
         g.setGuideLevel(guide.getGuideLevel());
         g.setGuideName(guide.getGuideName());
+        g.setLanguages(guide.getLanguages());
+        g.setGuideImage(guide.getGuideImage());
 
         return this.travelGuideRepository.save(g);
     }
