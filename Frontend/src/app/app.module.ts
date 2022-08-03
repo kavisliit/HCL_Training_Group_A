@@ -29,6 +29,7 @@ import { PlaceAddPicComponent } from './place-add-pic/place-add-pic.component';
 import { OnePlaceComponent } from './one-place/one-place.component';
 import { UpdatePlaceComponent } from './update-place/update-place.component';
 import { PlaceUserComponent } from './place-user/place-user.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { PlaceUserComponent } from './place-user/place-user.component';
     OnePlaceComponent,
     UpdatePlaceComponent,
     PlaceUserComponent,
+    SummaryComponent,
 
   ],
   imports: [

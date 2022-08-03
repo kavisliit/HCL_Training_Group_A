@@ -15,17 +15,46 @@ export class PlacesComponent implements OnInit {
   price!: number
   places: Place[] = [];
   type: string = ''
-
+  showlist: boolean = false
+  listplaces!: Place[]
 
   ngOnInit(): void {
     if (!localStorage.getItem("uid")) {
       location.href = "login"
     }
     this.getData()
+    this.getlist()
   }
   constructor(private placeservice: PlaceService, private router: Router) {
     this.type = "no"
 
+  }
+
+  deleteplace(id: number) {
+    if (localStorage.getItem("cart")) {
+      let data: any = localStorage.getItem("cart")
+      let arr = JSON.parse(data)
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].id == id) {
+          arr.splice(i, 1)
+          localStorage.setItem("cart", JSON.stringify(arr))
+          this.getlist()
+          return
+        }
+      }
+    }
+  }
+
+  getlist() {
+    if (localStorage.getItem("cart")) {
+      let data: any = localStorage.getItem("cart")
+      let arr = JSON.parse(data)
+      this.listplaces = arr
+      this.showlist = true
+    }
+    else {
+      this.showlist = false
+    }
   }
 
   getData() {

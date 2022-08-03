@@ -30,7 +30,33 @@
 
 
             </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-10">
+                    <div *ngIf="showlist">
+                        <h2 class="text-center">My List</h2>
+                        <div *ngFor="let p of listplaces">
+                            <div class="row p-2 mb-2" style="background-color: white;">
 
+
+                                <div class="col-4">
+
+                                    <img src="http://localhost:8070/image/{{p.mimage}}" class="img-fluid d-block" />
+                                </div>
+                                <div class="col-5">
+                                    {{p.name}}
+
+                                </div>
+                                <div class="col-1">
+                                    <i class="fa-solid fa-xmark" (click)="deleteplace(p.id)"
+                                        style="cursor: pointer;"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 

@@ -103,6 +103,7 @@ export class BookVehicleComponent implements OnInit {
     this.vehiclebook.addbooking(this.book).subscribe(data => {
       let v: Vehicle_books = <Vehicle_books>data
       alert("Vehicle Booked Successfully")
+      localStorage.setItem("book", "true")
       this.router.navigate(["plantrip"])
     }, err => {
       console.log(err)
