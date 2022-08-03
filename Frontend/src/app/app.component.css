@@ -28,3 +28,7 @@ nav a:hover {
     font-family: 'Comfortaa', cursive;
     font-size: 40px;
 }
+
+a{
+    margin-right: 10px;
+}
