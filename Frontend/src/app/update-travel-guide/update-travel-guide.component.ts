@@ -12,6 +12,15 @@ export class UpdateTravelGuideComponent implements OnInit {
 
   public guide:Guide = new Guide();
   public updateMsg:any;
+  public selectedItemsList:any;
+  public selectedLanguages:any;
+
+  langList = [
+    {langId: 1, label: "English", isChecked: false},
+    {langId: 2, label: "Sinhala", isChecked: false},
+    {langId: 3, label: "Tamil", isChecked: false},
+    {langId: 4, label: "French", isChecked: false}
+  ];
 
   constructor(
     private service:TravelGuideService, 
@@ -31,6 +40,16 @@ export class UpdateTravelGuideComponent implements OnInit {
       this.guide.languages = data['languages'];
 
       this.travel_pro_image = data['guideImage'];
+
+      for(let i=0; i<this.guide.languages.length; i++){
+        for(let j=0; j<this.langList.length; j++){
+          if(this.guide.languages[i] == this.langList[j].label){
+            this.langList[j].isChecked = true;
+          }
+        }
+      }
+
+      this.languagesChecked();
     });
   }
 
@@ -42,9 +61,18 @@ export class UpdateTravelGuideComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (eventPara:any) => {
         this.travel_pro_image = eventPara.target.result;
-        // this.guide.guideImage = eventPara.target.result;
       }
     }
+  }
+
+  languagesChecked(){
+    this.selectedItemsList = this.langList.filter((value, index) => {
+      return value.isChecked;
+    });
+    this.selectedLanguages = this.selectedItemsList.map((item: { label: any; }) => {
+      return item.label;
+    });
+    this.guide.languages = this.selectedLanguages;
   }
 
   public updateGuide(){

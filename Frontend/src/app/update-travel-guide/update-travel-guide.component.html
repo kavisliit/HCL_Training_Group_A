@@ -7,8 +7,8 @@
             <label for="proimage">
                 <p>Update Image</p>
                 <input type="file" accept="image/*" name="proimage" id="proimage" class="pro-Pic-Upload" [(ngModel)]="guide.guideImage" (change)="getProImage($event)" required />
-                <img id="proPic" class="pro-pic button-shadow" [src]="guide.guideImage" />
-                <!-- <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" /> -->
+                <!-- <img id="proPic" class="pro-pic button-shadow" [src]="guide.guideImage" /> -->
+                <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" />
             </label><br>
             <label for="">Name</label>
             <input type="text" name="" id="" class="" value="{{guide.guideName}}" [(ngModel)]="guide.guideName" />
@@ -24,14 +24,9 @@
                 <option value="5">5</option>
             </select>
             <label>Languages</label>
-            <div class="row">
+            <div class="row" *ngFor="let l of langList;">
                 <div class="col-4">
-                    Sinhala<input type="checkbox" id="" name="" class="checkbox" /><br>
-                    English<input type="checkbox" id="" name="" class="checkbox" />
-                </div>
-                <div class="col">
-                    Tamil<input type="checkbox" id="" name="" class="checkbox" /><br>
-                    French<input type="checkbox" id="" name="" class="checkbox" />
+                    {{l.label}}<input type="checkbox" class="checkbox" [(ngModel)]="l.isChecked" (change)="languagesChecked()" /><br>
                 </div>
             </div>
             <div>

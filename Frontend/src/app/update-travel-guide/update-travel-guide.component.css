@@ -4,7 +4,7 @@
 
 .first-col{
     background-image: linear-gradient(to bottom right, rgb(28, 114, 7), rgb(97, 239, 84));
-    height: 600px;
+    height: 640px;
     width: 50%;
     display: flex;
     justify-content: center;
