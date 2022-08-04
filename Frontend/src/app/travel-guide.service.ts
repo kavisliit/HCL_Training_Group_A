@@ -40,7 +40,20 @@ export class TravelGuideService {
     return this.http.get("http://localhost:8070/guide/getGuide/"+guideId);
   }
 
-  public updateGuide(guideId:number,guide:Guide){
-    return this.http.put("http://localhost:8070/guide/updateGuide/"+guideId, guide);
+  // public updateGuide(guideId:number,guide:Guide){
+  //   return this.http.put("http://localhost:8070/guide/updateGuide/"+guideId, guide);
+  // }
+
+  public updateGuide(guideId:number,guide:Guide,image:any){
+    let langString = "[" + guide.languages.join() + "]";
+    const guideFormData = new FormData();
+    guideFormData.append('guideName', guide.guideName);
+    guideFormData.append('guideLevel', guide.guideLevel.toString());
+    guideFormData.append('age', guide.age.toString());
+    guideFormData.append('languages', langString);
+    guideFormData.append('guideImage', guide.guideImage);
+    guideFormData.append('guideImageMult', image);
+
+    return this.http.put("http://localhost:8070/guide/updateGuide/"+guideId, guideFormData);
   }
 }

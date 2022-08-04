@@ -14,6 +14,7 @@ export class UpdateTravelGuideComponent implements OnInit {
   public updateMsg:any;
   public selectedItemsList:any;
   public selectedLanguages:any;
+  public selectedGuideImage:any;
 
   langList = [
     {langId: 1, label: "English", isChecked: false},
@@ -57,6 +58,7 @@ export class UpdateTravelGuideComponent implements OnInit {
 
   getProImage(event:any){
     if(event.target.files){
+      this.selectedGuideImage = <File>event.target.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (eventPara:any) => {
@@ -76,7 +78,7 @@ export class UpdateTravelGuideComponent implements OnInit {
   }
 
   public updateGuide(){
-    this.service.updateGuide(this.guide.guideId, this.guide).subscribe(data => this.updateMsg = data);
+    this.service.updateGuide(this.guide.guideId, this.guide, this.selectedGuideImage).subscribe(data => this.updateMsg = data);
     this.redirectRouter.navigate(['travelGuide']);
   }
 }
