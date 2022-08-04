@@ -1,8 +1,12 @@
 package com.backend.project.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.backend.project.entity.TravelGuide;
 import com.backend.project.service.TravelGuideService;
@@ -23,15 +29,42 @@ public class TravelGuideController {
 
     @Autowired
     private TravelGuideService travelGuideService;
+
+    @Value("${project.image}")
+    private String path;
     
     @RequestMapping("/test")
     public String test(){
         return "THIS IS TEST MAPPING";
     }
 
+    // //save travel guide controller
+    // @PostMapping("/save")
+    // public TravelGuide saveGuide(@RequestBody TravelGuide guide){
+    //     return this.travelGuideService.saveGuide(guide);
+    // }
+
     //save travel guide controller
     @PostMapping("/save")
-    public TravelGuide saveGuide(@RequestBody TravelGuide guide){
+    public TravelGuide saveGuide(
+        @RequestParam(value = "guideImageMult",required = false) MultipartFile image,
+        @RequestParam(value="guideName", required = false) String guideName,
+        @RequestParam(value="guideLevel", required = false) String guideLevel,
+        @RequestParam(value="age", required = false) String age,
+        @RequestParam(value="languages", required = false) String languages,
+        @RequestParam(value="guideImage", required = false) String guideImage
+    ) throws IOException{
+        TravelGuide guide = new TravelGuide();
+        guide.setAge(Integer.parseInt(age));
+        guide.setGuideImage(guideImage);
+        guide.setGuideLevel(Integer.parseInt(guideLevel));
+        guide.setGuideName(guideName);
+        ArrayList<String> langArray = new ArrayList<>(Arrays.asList(languages.replace("[","").replace("]","").split(",")));
+        guide.setLanguages(langArray);
+        String filePath = this.travelGuideService.uploadImage(path, image);
+        filePath = "../../".concat(filePath.substring(filePath.lastIndexOf("assets/")));
+        
+        guide.setGuideImage(filePath);
         return this.travelGuideService.saveGuide(guide);
     }
 

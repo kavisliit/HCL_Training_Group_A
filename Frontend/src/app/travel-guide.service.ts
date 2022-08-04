@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Guide } from './guide';
 import { Observable } from 'rxjs';
@@ -11,8 +11,21 @@ export class TravelGuideService {
   private baseUrl = "http://localhost:8070/guide";
   constructor(private http: HttpClient) { }
 
-  public addTravelGuide(guide: Guide){
-    return this.http.post("http://localhost:8070/guide/save", guide, {responseType: 'json'});
+  // public addTravelGuide(guide: Guide){
+  //   return this.http.post("http://localhost:8070/guide/save", guide, {responseType: 'json'});
+  // }
+
+  public addTravelGuide(guide: Guide, image: any){
+    let langString = "[" + guide.languages.join() + "]";
+    const fd = new FormData();
+    fd.append('guideName', guide.guideName);
+    fd.append('guideLevel', guide.guideLevel.toString());
+    fd.append('age', guide.age.toString());
+    fd.append('languages', langString);
+    fd.append('guideImage', guide.guideImage);
+    fd.append('guideImageMult', image);
+
+    return this.http.post("http://localhost:8070/guide/save", fd);
   }
 
   public getAllTravelGuides(): Observable<Guide[]>{
