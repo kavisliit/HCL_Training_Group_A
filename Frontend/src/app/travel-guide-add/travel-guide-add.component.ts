@@ -20,6 +20,7 @@ export class TravelGuideAddComponent implements OnInit {
   public message:any;
   public selectedItemsList:any = [];
   public selectedLanguages:any = [];
+  public selectedGuideImage:any;
 
   public travel_pro_image = "../../assets/images/default-profile-pic.jpg";
   
@@ -29,6 +30,7 @@ export class TravelGuideAddComponent implements OnInit {
 
   getProImage(event:any){
     if(event.target.files){
+      this.selectedGuideImage = <File>event.target.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (eventPara:any) => {
@@ -98,7 +100,7 @@ export class TravelGuideAddComponent implements OnInit {
   //========== Calling Backend Api ===================================================================
   //add travel Guide
   public addTravelGuide(){
-    let response = this.service.addTravelGuide(this.guide);
+    let response = this.service.addTravelGuide(this.guide, this.selectedGuideImage);
     response.subscribe(data => this.message = data);
   }
 
