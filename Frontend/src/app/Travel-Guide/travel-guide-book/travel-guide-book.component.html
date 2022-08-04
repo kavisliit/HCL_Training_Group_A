@@ -6,11 +6,14 @@
             <div class="card formCard">
                 <form (ngSubmit)="bookGuide()">
                     <label for="guideName">Name</label><br>
-                    <input type="text" disabled value="{{guide.guideName}}" />
+                    <input type="text" id="guideName" disabled value="{{guide.guideName}}" />
+                    <span id="nameError"></span>
                     <br><br>
                     <label for="guideName">Number of days for booking</label><br>
-                    <input type="number" [(ngModel)]="guide.noOfDays" (change)="calPrice($event)" /><br><br>
-                    <button type="submit" class="btn btn-primary">Book Your Guide</button>
+                    <input type="number" id="noOfDays" [(ngModel)]="guide.noOfDays" (change)="calPrice($event)" />
+                    <span id="dayError"></span>
+                    <br><br>
+                    <button type="submit" id="bookGuideBtn" class="btn btn-primary">Book Your Guide</button>
                     <br><br>
                 </form>
             </div>

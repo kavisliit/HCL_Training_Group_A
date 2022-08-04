@@ -1,0 +1,32 @@
+.container-main{
+    padding-top: 50px;
+}
+
+.bookedGuideCard{
+    box-shadow: 0px 0px 7px rgba(128, 128, 128, 0.575);
+    margin-bottom: 10px;
+    padding: 20px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    color: darkblue;
+}
+
+.deleteBtn{
+    background-color: rgb(198, 0, 0);
+    color: white;
+    border: 0px;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 15px;
+}
+
+.deleteBtn:hover{
+    background-color: rgb(105, 1, 1);
+}
+
+img{
+    margin: auto;
+    position: fixed;
+    top: 10em;
+    width: 600px;
+}

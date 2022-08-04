@@ -10,6 +10,11 @@ import { TravelGuideService } from 'src/app/travel-guide.service';
 export class TravelGuideBookComponent implements OnInit {
   public travelGuides:any;
   guide: BookedGuide = new BookedGuide();
+  days:any;
+  name:any;
+  bookButton:any;
+  dayError:any;
+  nameError:any;
 
   constructor(private service:TravelGuideService) { }
 
@@ -26,6 +31,7 @@ export class TravelGuideBookComponent implements OnInit {
   }
 
   public calPrice(event: any){
+    this.guide.noOfDays = event.target.value;
     let noOfDays = event.target.value;
     if(noOfDays <= 0){
       this.guide.price = 0;
@@ -41,6 +47,29 @@ export class TravelGuideBookComponent implements OnInit {
   }
 
   bookGuide(){
-    this.service.bookTravelGuide(this.guide).subscribe();
+    this.days = document.getElementById("noOfDays");
+    this.name = document.getElementById("guideName");
+    this.bookButton = document.getElementById("bookGuideBtn");
+    this.dayError = document.getElementById("dayError");
+    this.nameError = document.getElementById("nameError");
+
+    if(this.days.value == null || this.days.value<=0){
+      this.dayError.innerHTML = "Please enter no of days before booking";
+      this.dayError.style.color = "red";
+    }else{
+      this.dayError.style.visibility = "hidden";
+    }
+
+    if(this.name.value.length == 0 || this.name.value.length < 0){
+      this.nameError.innerHTML = "Please select guide";
+      this.nameError.style.color = "red";
+    }else{
+      this.nameError.style.visibility = "hidden";
+    }
+
+    if(this.name.value.length > 0 && this.days.value > 0){
+      this.service.bookTravelGuide(this.guide).subscribe();
+      alert("Travel Guide Booked Successfully");
+    }
   }
 }

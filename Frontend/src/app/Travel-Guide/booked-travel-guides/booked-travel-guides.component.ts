@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TravelGuideService } from 'src/app/travel-guide.service';
 
 @Component({
   selector: 'app-booked-travel-guides',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./booked-travel-guides.component.css']
 })
 export class BookedTravelGuidesComponent implements OnInit {
+  public bookedGuidesList:any;
 
-  constructor() { }
+  constructor(private service: TravelGuideService) { }
 
   ngOnInit(): void {
+    this.service.getAllBookedTravelGuides().subscribe(data => this.bookedGuidesList = data);
+  }
+
+  public deleteBookedGuide(bookedGuideId: number){
+    this.service.deleteBookedGuide(bookedGuideId).subscribe();
+    this.service.getAllBookedTravelGuides().subscribe(data => this.bookedGuidesList = data);
   }
 
 }
