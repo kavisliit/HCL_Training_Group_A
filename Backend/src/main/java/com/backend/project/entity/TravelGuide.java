@@ -1,5 +1,7 @@
 package com.backend.project.entity;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,18 +20,40 @@ public class TravelGuide {
     @Column(name = "GuideName")
     String guideName;
     @Column(name = "GuideLevel")
-    String guideLevel;
+    int guideLevel;
     @Column(name = "GuideAge")
-    String age;
+    int age;
+    @Column(name="GuideLanguages")
+    public ArrayList<String> languages;
+    @Column(name="GuideImage")
+    String guideImage;
 
     public TravelGuide(){
         super();
     }
     
-    public TravelGuide(int guideId, String guideName, String guideLevel, String age){
+    public TravelGuide(int guideId, String guideName, int guideLevel, int age, ArrayList<String> languages, String guideImage){
         this.age = age;
         this.guideLevel = guideLevel;
         this.guideName = guideName;
+        this.languages = languages;
+        this.guideImage = guideImage;
+    }
+
+    public void setGuideImage(String guideImage){
+        this.guideImage = guideImage;
+    }
+
+    public String getGuideImage(){
+        return this.guideImage;
+    }
+
+    public void setLanguages(ArrayList<String> languages){
+        this.languages = languages;
+    }
+
+    public ArrayList<String> getLanguages(){
+        return this.languages;
     }
 
     public void setGuideId(int guideId){
@@ -40,19 +64,19 @@ public class TravelGuide {
         return this.guideId;
     }
 
-    public void setGuideLevel(String guideLevel){
+    public void setGuideLevel(int guideLevel){
         this.guideLevel = guideLevel;
     }
 
-    public String getGuideLevel(){
+    public int getGuideLevel(){
         return this.guideLevel;
     }
 
-    public void setAge(String age){
+    public void setAge(int age){
         this.age = age;
     }
 
-    public String getAge(){
+    public int getAge(){
         return this.age;
     }
 

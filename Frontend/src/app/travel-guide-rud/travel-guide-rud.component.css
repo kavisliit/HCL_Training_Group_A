@@ -62,3 +62,20 @@
     height: 40px;
     margin: auto auto;
 }
+
+.seeGuidesBtn{
+    background-color: rgb(4, 169, 155);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 5px 0px;
+    margin: 0px 20% 40px 20%;
+    width: 60%;
+    color: white;
+}
+
+.seeGuidesBtn:hover{
+    background-color: transparent;
+    color: rgb(4, 169, 155);
+    border: 1px solid rgb(4, 169, 155);
+    box-shadow: 0px 0px 10px rgba(184, 173, 173, 0.984);
+}

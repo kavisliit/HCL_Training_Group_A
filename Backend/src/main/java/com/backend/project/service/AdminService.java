@@ -21,4 +21,8 @@ public class AdminService {
             return null;
         }
     }
+
+    public Admin addAdmin(Admin admin) {
+        return adminRepository.save(admin);
+    }
 }

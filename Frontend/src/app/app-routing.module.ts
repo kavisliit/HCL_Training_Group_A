@@ -29,7 +29,7 @@ import { ViewOneVehicleComponent } from './view-one-vehicle/view-one-vehicle.com
 const routes: Routes = [
   { path: "addTravelGuide", component: TravelGuideAddComponent },
   { path: "travelGuide", component: TravelGuideRUDComponent },
-  { path: "updateTravelGuide", component: UpdateTravelGuideComponent },
+  { path: "updateTravelGuide/:routerGuideId", component: UpdateTravelGuideComponent },
   { path: "allvehicle", component: VehicleListComponent },
   { path: "onevehicle/:id", component: OneVehicleComponent },
   { path: "oneplace/:id", component: OnePlaceComponent },
