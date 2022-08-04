@@ -1,1 +1,26 @@
-<p>booked-travel-guides works!</p>
+<div class="container container-main">
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let g of bookedGuidesList;">
+                <div class="bookedGuideCard row">
+                    <div class="col">
+                        {{g.guideName}}
+                    </div>
+                    <div class="col">
+                        {{"Days: " + g.noOfDays}}
+                    </div>
+                    <div class="col">
+                        {{"Rs. " + g.price + "/="}}
+                    </div>
+                    <div class="col">
+                        <button class="deleteBtn" (click)="deleteBookedGuide(g.bookedGuideId)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!-- <img src="../../../assets/images/track.webp" width="100%"> -->
+            <img src="../../../assets/images/bookedGuide.png" width="100%">
+        </div>
+    </div>
+</div>

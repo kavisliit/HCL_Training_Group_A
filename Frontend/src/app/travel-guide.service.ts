@@ -47,19 +47,28 @@ export class TravelGuideService {
 
   public updateGuide(guideId:number,guide:Guide,image:any){
     let langString = "[" + guide.languages.join() + "]";
-    const guideFormData = new FormData();
-    guideFormData.append('guideName', guide.guideName);
-    guideFormData.append('guideLevel', guide.guideLevel.toString());
-    guideFormData.append('age', guide.age.toString());
-    guideFormData.append('languages', langString);
-    guideFormData.append('guideImage', guide.guideImage);
-    guideFormData.append('guideImageMult', image);
+    const fd = new FormData();
+    fd.append('guideName', guide.guideName);
+    fd.append('guideLevel', guide.guideLevel.toString());
+    fd.append('age', guide.age.toString());
+    fd.append('languages', langString);
+    fd.append('guideImage', guide.guideImage);
+    fd.append('guideImageMult', image);
 
-    return this.http.put("http://localhost:8070/guide/updateGuide/"+guideId, guideFormData);
+    console.log(fd);
+    return this.http.put("http://localhost:8070/guide/updateGuide/"+guideId, fd);
   }
 
   //===== CLIENT SIDE API CALL ==========================================
   public bookTravelGuide(g: BookedGuide){
     return this.http.post("http://localhost:8070/guide/book/save", g);
+  }
+
+  public getAllBookedTravelGuides(): Observable<BookedGuide[]>{
+    return this.http.get<BookedGuide[]>("http://localhost:8070/guide/book/getAll");
+  }
+
+  public deleteBookedGuide(guideId:number){
+    return this.http.delete("http://localhost:8070/guide/book/delete/"+guideId);
   }
 }
