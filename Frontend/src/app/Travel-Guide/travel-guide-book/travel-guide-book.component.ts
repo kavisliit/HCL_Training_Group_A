@@ -26,6 +26,7 @@ export class TravelGuideBookComponent implements OnInit {
   }
 
   public calPrice(event: any){
+    this.guide.noOfDays = event.target.value;
     let noOfDays = event.target.value;
     if(noOfDays <= 0){
       this.guide.price = 0;
