@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Guide } from './guide';
 import { Observable } from 'rxjs';
+import { BookedGuide } from './bookGuide';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,10 @@ export class TravelGuideService {
     guideFormData.append('guideImageMult', image);
 
     return this.http.put("http://localhost:8070/guide/updateGuide/"+guideId, guideFormData);
+  }
+
+  //===== CLIENT SIDE API CALL ==========================================
+  public bookTravelGuide(g: BookedGuide){
+    return this.http.post("http://localhost:8070/guide/book/save", g);
   }
 }
