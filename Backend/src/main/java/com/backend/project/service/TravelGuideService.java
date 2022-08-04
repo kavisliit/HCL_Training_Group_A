@@ -1,9 +1,15 @@
 package com.backend.project.service;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.backend.project.entity.TravelGuide;
 import com.backend.project.repository.TravelGuideRepository;
@@ -45,5 +51,20 @@ public class TravelGuideService {
     //delete a travel guide from id
     public void deleteTravelGuide(int guideId){
         this.travelGuideRepository.deleteById(guideId);
+    }
+
+    //upload images
+    public String uploadImage(String path, MultipartFile file) throws IOException{
+        String name = file.getOriginalFilename();
+        String randomID = UUID.randomUUID().toString();
+        String newFileName = randomID.concat(name.substring(name.lastIndexOf(".")));
+
+        String filePath = path + File.separator + newFileName;
+        File f = new File(path);
+        if(!f.exists()){
+            f.mkdir();
+        }
+        Files.copy(file.getInputStream(), Paths.get(filePath));
+        return filePath;
     }
 }
