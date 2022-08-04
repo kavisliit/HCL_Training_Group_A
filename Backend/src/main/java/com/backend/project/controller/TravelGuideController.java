@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.backend.project.entity.BookGuide;
 import com.backend.project.entity.TravelGuide;
 import com.backend.project.service.TravelGuideService;
 
@@ -116,5 +118,22 @@ public class TravelGuideController {
     public String deleteTravelGuide(@PathVariable("guideId") int id){
         this.travelGuideService.deleteTravelGuide(id);
         return "guide deleted";
+    }
+
+    //======= CLIENT SIDE APIS =========================================================
+    @PostMapping("/book/save")
+    public BookGuide bookGuide(@RequestBody BookGuide g){
+        return this.travelGuideService.bookGuide(g);
+    }
+
+    @GetMapping("/book/getAll")
+    public List<BookGuide> getAllBookedGuides(){
+        return this.travelGuideService.getAllBookGuides();
+    }
+
+    @DeleteMapping("/book/delete/{id}")
+    public String deleteBookedGuide(@PathVariable("id") int guideId){
+        this.travelGuideService.deletebookedGuide(guideId);
+        return "Booked Guide Deleted";
     }
 }

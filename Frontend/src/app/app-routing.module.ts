@@ -18,6 +18,9 @@ import { RegisterComponent } from './register/register.component';
 import { SummaryComponent } from './summary/summary.component';
 import { TravelGuideAddComponent } from './travel-guide-add/travel-guide-add.component';
 import { TravelGuideRUDComponent } from './travel-guide-rud/travel-guide-rud.component';
+import { BookedTravelGuidesComponent } from './Travel-Guide/booked-travel-guides/booked-travel-guides.component';
+import { TravelGuideBookMainComponent } from './Travel-Guide/travel-guide-book-main/travel-guide-book-main.component';
+import { TravelGuideBookComponent } from './Travel-Guide/travel-guide-book/travel-guide-book.component';
 import { TripPlanComponent } from './trip-plan/trip-plan.component';
 import { UpdatePlaceComponent } from './update-place/update-place.component';
 import { UpdateTravelGuideComponent } from './update-travel-guide/update-travel-guide.component';
@@ -30,6 +33,9 @@ const routes: Routes = [
   { path: "addTravelGuide", component: TravelGuideAddComponent },
   { path: "travelGuide", component: TravelGuideRUDComponent },
   { path: "updateTravelGuide/:routerGuideId", component: UpdateTravelGuideComponent },
+  { path: "bookGuideMain", component: TravelGuideBookMainComponent},
+  { path: "bookGuide", component: TravelGuideBookComponent},
+  { path: "bookedGuides", component: BookedTravelGuidesComponent},
   { path: "allvehicle", component: VehicleListComponent },
   { path: "onevehicle/:id", component: OneVehicleComponent },
   { path: "oneplace/:id", component: OnePlaceComponent },
@@ -65,6 +71,9 @@ export const routingComponents = [
   TravelGuideAddComponent,
   TravelGuideRUDComponent,
   UpdateTravelGuideComponent,
+  TravelGuideBookMainComponent,
+  TravelGuideBookComponent,
+  BookedTravelGuidesComponent,
   RegisterComponent,
   LoginComponent,
   VehicleTableComponent,

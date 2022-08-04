@@ -1,0 +1,50 @@
+<div class="container container-main">
+    <h1>Book You Travel Guide</h1>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card formCard">
+                <form (ngSubmit)="bookGuide()">
+                    <label for="guideName">Name</label><br>
+                    <input type="text" disabled value="{{guide.guideName}}" />
+                    <br><br>
+                    <label for="guideName">Number of days for booking</label><br>
+                    <input type="number" [(ngModel)]="guide.noOfDays" (change)="calPrice($event)" /><br><br>
+                    <button type="submit" class="btn btn-primary">Book Your Guide</button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Price For Your Booking</h3>
+            <h5>{{"Rs." + guide.price + "/="}}</h5>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="grid-container">
+            <div *ngFor="let guide of travelGuides;">
+                <div class="travelGuideCard">
+                    <div class="row">
+                        <div class="col">
+                            <img src={{guide.guideImage}} />
+                            <div class="btnDiv">
+                                <button class="btnAll btn btn-primary" (click)="selectGuide(guide.guideId)">Select Guide</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h6>{{guide.guideName}}</h6>
+                            <p>Experience Level: {{guide.guideLevel}}</p>
+                            <p>Age: {{guide.age}}</p>
+                            <div>Languages:
+                                <div *ngFor="let l of guide.languages;">
+                                    {{l}}
+                                </div>
+                            </div>    
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

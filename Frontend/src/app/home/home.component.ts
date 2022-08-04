@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["plantrip"])
   }
 
+  redirectToTravelGuideMain(){
+    this.router.navigate(["bookGuideMain"]);
+  }
+
 }
