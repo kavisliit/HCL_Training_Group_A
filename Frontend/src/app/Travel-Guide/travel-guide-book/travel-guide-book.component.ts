@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookedGuide } from 'src/app/bookGuide';
 import { TravelGuideService } from 'src/app/travel-guide.service';
 
@@ -16,11 +17,18 @@ export class TravelGuideBookComponent implements OnInit {
   dayError:any;
   nameError:any;
 
-  constructor(private service:TravelGuideService) { }
+  constructor(
+    private service:TravelGuideService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.service.getAllTravelGuides().subscribe(data => this.travelGuides = data);
     this.guide.price = 0;
+  }
+
+  back(){
+    this.router.navigate(["bookGuideMain"]);
   }
 
   public selectGuide(guideId: number){
