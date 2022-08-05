@@ -15,8 +15,8 @@ export class BookedTravelGuidesComponent implements OnInit {
     this.service.getAllBookedTravelGuides().subscribe(data => this.bookedGuidesList = data);
   }
 
-  public deleteBookedGuide(bookedGuideId: number){
-    this.service.deleteBookedGuide(bookedGuideId).subscribe();
+  public deleteBookedGuide(id: number){
+    this.service.deleteBookedGuide(id).subscribe();
     this.service.getAllBookedTravelGuides().subscribe(data => this.bookedGuidesList = data);
   }
 
