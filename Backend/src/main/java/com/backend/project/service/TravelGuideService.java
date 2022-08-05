@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.backend.project.entity.BookGuide;
 import com.backend.project.entity.TravelGuide;
+import com.backend.project.repository.TravelGuideBOOKRepository;
 import com.backend.project.repository.TravelGuideRepository;
 
 @Component
@@ -19,6 +21,9 @@ public class TravelGuideService {
     
     @Autowired
     private TravelGuideRepository travelGuideRepository;
+
+    @Autowired
+    private TravelGuideBOOKRepository bookTravelGuideRepository;
 
     //save a travel guide
     public TravelGuide saveGuide(TravelGuide guide){
@@ -66,5 +71,18 @@ public class TravelGuideService {
         }
         Files.copy(file.getInputStream(), Paths.get(filePath));
         return filePath;
+    }
+
+    //======= CLIENT SIDE SERVICE ================================================
+    public BookGuide bookGuide(BookGuide g){
+        return this.bookTravelGuideRepository.save(g);
+    }
+
+    public List<BookGuide> getAllBookGuides(){
+        return (List<BookGuide>) this.bookTravelGuideRepository.findAll();
+    }
+
+    public void deletebookedGuide(int guideId){
+        this.bookTravelGuideRepository.deleteById(guideId);
     }
 }

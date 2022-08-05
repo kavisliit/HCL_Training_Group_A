@@ -61,8 +61,8 @@ import { SummaryComponent } from './summary/summary.component';
     UpdatePlaceComponent,
     PlaceUserComponent,
     SummaryComponent,
-
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
