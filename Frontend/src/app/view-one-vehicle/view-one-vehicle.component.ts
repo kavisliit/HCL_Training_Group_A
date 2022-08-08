@@ -22,6 +22,9 @@ export class ViewOneVehicleComponent implements OnInit {
     this.getData()
   }
 
+  goback() {
+    this.router.navigate(["vehicletable"])
+  }
   changepic(type: string) {
     var temp;
     if (type === "f") {

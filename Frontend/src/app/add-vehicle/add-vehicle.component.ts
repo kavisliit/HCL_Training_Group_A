@@ -29,6 +29,9 @@ export class AddVehicleComponent implements OnInit {
       location.href = "adminlogin"
     }
   }
+  goback() {
+    this.router.navigate(["vehicletable"])
+  }
 
   setcheckboxs() {
     if (this.s1 === true) {

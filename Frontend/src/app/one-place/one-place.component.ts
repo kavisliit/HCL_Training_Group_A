@@ -26,6 +26,10 @@ export class OnePlaceComponent implements OnInit {
     this.getData()
   }
 
+  goback() {
+    this.router.navigate(["placetable"])
+  }
+
 
 
   changepic(type: string) {

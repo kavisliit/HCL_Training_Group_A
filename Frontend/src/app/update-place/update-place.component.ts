@@ -27,6 +27,9 @@ export class UpdatePlaceComponent implements OnInit {
       console.log(er)
     })
   }
+  goback() {
+    this.router.navigate(["placetable"])
+  }
   submit() {
 
     let brand = document.getElementById("types")

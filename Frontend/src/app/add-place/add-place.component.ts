@@ -14,6 +14,9 @@ export class AddPlaceComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  goback() {
+    this.router.navigate(["placetable"])
+  }
 
   submit() {
 

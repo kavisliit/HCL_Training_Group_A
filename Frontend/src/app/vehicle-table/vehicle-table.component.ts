@@ -20,6 +20,9 @@ export class VehicleTableComponent implements OnInit {
     }
     this.loadData()
   }
+  goback() {
+    this.router.navigate(["adminhome"])
+  }
 
   loadData() {
     this.vehicleService.getAllVehicle().subscribe(data => {

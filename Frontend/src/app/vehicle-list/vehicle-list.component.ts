@@ -26,6 +26,9 @@ export class VehicleListComponent implements OnInit {
     this.brand = "no"
   }
 
+  goback() {
+    this.router.navigate(["plantrip"])
+  }
   getData() {
     this.vehicleService.getAllVehicle().subscribe(data => {
       var list: Vehicle[] = <Vehicle[]>data
