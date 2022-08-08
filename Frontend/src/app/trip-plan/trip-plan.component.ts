@@ -46,6 +46,10 @@ export class TripPlanComponent implements OnInit {
         return
       }
     }
+    else {
+      this.have = false
+      return
+    }
     this.vehiclebookservice.checkBookHave(this.uid).subscribe(data => {
       var v: Vehicle = <Vehicle>data
       if (v) {

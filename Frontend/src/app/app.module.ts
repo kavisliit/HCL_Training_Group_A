@@ -31,6 +31,7 @@ import { OnePlaceComponent } from './one-place/one-place.component';
 import { UpdatePlaceComponent } from './update-place/update-place.component';
 import { PlaceUserComponent } from './place-user/place-user.component';
 import { SummaryComponent } from './summary/summary.component';
+import { MainHomeComponent } from './main-home/main-home.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { SummaryComponent } from './summary/summary.component';
     UpdatePlaceComponent,
     PlaceUserComponent,
     SummaryComponent,
+    MainHomeComponent,
   ],
   
   imports: [

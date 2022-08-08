@@ -8,6 +8,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BookVehicleComponent } from './book-vehicle/book-vehicle.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MainHomeComponent } from './main-home/main-home.component';
 import { OnePlaceComponent } from './one-place/one-place.component';
 import { OneVehicleComponent } from './one-vehicle/one-vehicle.component';
 import { PlaceAddPicComponent } from './place-add-pic/place-add-pic.component';
@@ -33,9 +34,9 @@ const routes: Routes = [
   { path: "addTravelGuide", component: TravelGuideAddComponent },
   { path: "travelGuide", component: TravelGuideRUDComponent },
   { path: "updateTravelGuide/:routerGuideId", component: UpdateTravelGuideComponent },
-  { path: "bookGuideMain", component: TravelGuideBookMainComponent},
-  { path: "bookGuide", component: TravelGuideBookComponent},
-  { path: "bookedGuides", component: BookedTravelGuidesComponent},
+  { path: "bookGuideMain", component: TravelGuideBookMainComponent },
+  { path: "bookGuide", component: TravelGuideBookComponent },
+  { path: "bookedGuides", component: BookedTravelGuidesComponent },
   { path: "allvehicle", component: VehicleListComponent },
   { path: "onevehicle/:id", component: OneVehicleComponent },
   { path: "oneplace/:id", component: OnePlaceComponent },
@@ -53,12 +54,12 @@ const routes: Routes = [
   { path: "adminlogin", component: AdminLoginComponent },
   { path: "adminhome", component: AdminHomeComponent },
   { path: "addplace", component: AddPlaceComponent },
-  { path: "", component: LoginComponent },
   { path: "addplacepic/:id", component: PlaceAddPicComponent },
   { path: "placetable", component: PlaceTableComponent },
   { path: "placelist", component: PlacesComponent },
   { path: "useroneplace/:id", component: PlaceUserComponent },
   { path: "summary/:id", component: SummaryComponent },
+  { path: "", component: MainHomeComponent },
 ];
 
 @NgModule({
@@ -83,5 +84,6 @@ export const routingComponents = [
   AdminHomeComponent,
   AddPlaceComponent,
   PlacesComponent,
-  SummaryComponent
+  SummaryComponent,
+  MainHomeComponent
 ];

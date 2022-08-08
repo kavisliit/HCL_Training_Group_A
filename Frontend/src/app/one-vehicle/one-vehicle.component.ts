@@ -25,7 +25,9 @@ export class OneVehicleComponent implements OnInit {
     this.getData()
   }
 
-
+  goback() {
+    this.router.navigate(["allvehicle"])
+  }
   bookvehicle() {
     this.router.navigate(["bookvehicle", this.id])
   }

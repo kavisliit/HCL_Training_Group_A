@@ -25,7 +25,9 @@ export class UpdateVehicleComponent implements OnInit {
   }
   constructor(private vehicleService: VehicleService, private router: Router, private route: ActivatedRoute) { }
 
-
+  goback() {
+    this.router.navigate(["vehicletable"])
+  }
   getData() {
     this.vehicleService.getOneVehicle(this.id).subscribe(data => {
       let v: Vehicle = <Vehicle>data

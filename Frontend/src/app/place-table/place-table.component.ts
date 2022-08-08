@@ -19,6 +19,9 @@ export class PlaceTableComponent implements OnInit {
     }
     this.loadData()
   }
+  goback() {
+    this.router.navigate(["adminhome"])
+  }
 
   loadData() {
     this.placeservice.getAllplaces().subscribe(data => {
