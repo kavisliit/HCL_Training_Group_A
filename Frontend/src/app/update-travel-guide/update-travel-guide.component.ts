@@ -29,6 +29,10 @@ export class UpdateTravelGuideComponent implements OnInit {
     private redirectRouter:Router
   ) { }
 
+  back(){
+    this.redirectRouter.navigate(['travelGuide'])
+  }
+
   ngOnInit(): void {
     console.log(this.router.snapshot.params['routerGuideId']);
     this.service.getGuideById(this.router.snapshot.params['routerGuideId']).subscribe((data:any) => {

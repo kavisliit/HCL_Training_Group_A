@@ -30,3 +30,27 @@ img{
     top: 10em;
     width: 600px;
 }
+
+.backBtn{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid rgb(128, 128, 128);
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.backBtn:hover{
+    border: 2px solid black;
+}
+
+.backIcon{
+    width: 20px;
+}
+
+.backLabel{
+    font-size: 25px;
+    margin-left: 15px;
+    color: gray;
+}

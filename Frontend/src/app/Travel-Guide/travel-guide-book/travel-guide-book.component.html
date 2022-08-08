@@ -13,16 +13,23 @@
                     <input type="text" id="guideName" disabled value="{{guide.guideName}}" />
                     <span id="nameError"></span>
                     <br><br>
-                    <label for="guideName">Number of days for booking</label><br>
-                    <input type="number" id="noOfDays" [(ngModel)]="guide.noOfDays" (change)="calPrice($event)" />
-                    <span id="dayError"></span>
+                    <label for="guideName">Booking Start Date</label><br>
+                    <input type="date" id="startDate" (change)="startDate($event)" />
+                    <span id="startError"></span>
                     <br><br>
+                    <label for="guideName">Booking End Date</label><br>
+                    <input type="date" id="endDate" (change)="endDate($event)" />
+                    <span id="endError"></span>
+                    <br><br>
+                    
                     <button type="submit" id="bookGuideBtn" class="btn btn-primary">Book Your Guide</button>
                     <br><br>
                 </form>
             </div>
         </div>
         <div class="col">
+            <h3>Number of days for Booking</h3>
+            <h5>{{guide.noOfDays}}</h5>
             <h3>Price For Your Booking</h3>
             <h5>{{"Rs." + guide.price + "/="}}</h5>
         </div>

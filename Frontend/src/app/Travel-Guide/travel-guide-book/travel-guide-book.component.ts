@@ -11,11 +11,18 @@ import { TravelGuideService } from 'src/app/travel-guide.service';
 export class TravelGuideBookComponent implements OnInit {
   public travelGuides:any;
   guide: BookedGuide = new BookedGuide();
-  days:any;
+
   name:any;
   bookButton:any;
   dayError:any;
   nameError:any;
+  startError:any;
+  endError:any;
+  start!: Date;
+  startDateTime:any;
+  end!:Date;
+  endDateTime:any;
+  difference:any = 0;
 
   constructor(
     private service:TravelGuideService,
@@ -25,6 +32,7 @@ export class TravelGuideBookComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllTravelGuides().subscribe(data => this.travelGuides = data);
     this.guide.price = 0;
+    this.guide.noOfDays = 0;
   }
 
   back(){
@@ -38,9 +46,32 @@ export class TravelGuideBookComponent implements OnInit {
     });
   }
 
-  public calPrice(event: any){
-    this.guide.noOfDays = event.target.value;
-    let noOfDays = event.target.value;
+  startDate(event:any){
+    this.start = new Date(event.target.value);
+    if(this.startError != null){
+      this.startError.innerHTML = null;
+    }
+    if(this.end != null){
+      this.difference = this.end.getDate() - this.start.getDate();
+      this.guide.noOfDays = this.difference;
+      this.calPrice2(this.difference);
+    }
+  }
+
+  endDate(event:any){
+    this.end = new Date(event.target.value);
+    if(this.start != null){
+      this.difference = this.end.getDate() - this.start.getDate();
+      this.guide.noOfDays = this.difference;
+      this.calPrice2(this.difference);
+    }
+    if(this.endError != null){
+      this.endError.innerHTML = null;
+    }
+  }
+
+  public calPrice2(differ: any){
+    let noOfDays = differ;
     if(noOfDays <= 0){
       this.guide.price = 0;
     }else if(noOfDays <=5){
@@ -55,17 +86,29 @@ export class TravelGuideBookComponent implements OnInit {
   }
 
   bookGuide(){
-    this.days = document.getElementById("noOfDays");
     this.name = document.getElementById("guideName");
-    this.bookButton = document.getElementById("bookGuideBtn");
-    this.dayError = document.getElementById("dayError");
-    this.nameError = document.getElementById("nameError");
+    this.startDateTime = document.getElementById("startDate");
+    this.endDateTime = document.getElementById("endDate");
 
-    if(this.days.value == null || this.days.value<=0){
-      this.dayError.innerHTML = "Please enter no of days before booking";
-      this.dayError.style.color = "red";
+    this.bookButton = document.getElementById("bookGuideBtn");
+    this.nameError = document.getElementById("nameError");
+    this.startError = document.getElementById("startError");
+    this.endError = document.getElementById("endError");
+
+    if(this.startDateTime.value.length <= 0){
+      this.startError.innerHTML = "Please select booking start";
+      this.startError.style.color = "red";
     }else{
-      this.dayError.style.visibility = "hidden";
+      this.startError.visibility = "hidden";
+      this.startError.innerHTML = null;
+    }
+
+    if(this.endDateTime.value.length <= 0){
+      this.endError.innerHTML = "Please select booking end";
+      this.endError.style.color = "red";
+    }else{
+      this.endError.visibility = "hidden";
+      this.endError.innerHTML = null;
     }
 
     if(this.name.value.length == 0 || this.name.value.length < 0){
@@ -75,7 +118,7 @@ export class TravelGuideBookComponent implements OnInit {
       this.nameError.style.visibility = "hidden";
     }
 
-    if(this.name.value.length > 0 && this.days.value > 0){
+    if(this.name.value.length > 0 && this.endDateTime.value.length > 0 && this.startDateTime.value.length > 0){
       this.service.bookTravelGuide(this.guide).subscribe();
       alert("Travel Guide Booked Successfully");
     }

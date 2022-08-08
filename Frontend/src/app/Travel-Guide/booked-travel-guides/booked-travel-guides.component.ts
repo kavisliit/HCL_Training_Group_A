@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TravelGuideService } from 'src/app/travel-guide.service';
 
 @Component({
@@ -9,10 +10,14 @@ import { TravelGuideService } from 'src/app/travel-guide.service';
 export class BookedTravelGuidesComponent implements OnInit {
   public bookedGuidesList:any;
 
-  constructor(private service: TravelGuideService) { }
+  constructor(private service: TravelGuideService, private router:Router) { }
 
   ngOnInit(): void {
     this.service.getAllBookedTravelGuides().subscribe(data => this.bookedGuidesList = data);
+  }
+
+  back(){
+    this.router.navigate(["bookGuideMain"]);
   }
 
   public deleteBookedGuide(id: number){
