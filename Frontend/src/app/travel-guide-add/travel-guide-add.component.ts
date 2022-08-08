@@ -23,6 +23,10 @@ export class TravelGuideAddComponent implements OnInit {
   public selectedGuideImage:any;
 
   public travel_pro_image = "../../assets/images/default-profile-pic.jpg";
+
+  back(){
+    this.router.navigate(['adminhome'])
+  }
   
   redirectSeeAllGuides(){
     this.router.navigate(['travelGuide'])

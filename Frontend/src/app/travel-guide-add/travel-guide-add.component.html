@@ -1,4 +1,8 @@
 <div class="container container-main">
+    <button class="backBtn" (click)="back()">
+        <img src="../../../assets/images/backBtn.gif" class="backIcon"/>
+    </button>
+    <span class="backLabel">Back</span>
     <div class="row">
         <button class="seeGuidesBtn" (click)="redirectSeeAllGuides()">See Travel Guides</button>
     </div>
@@ -38,7 +42,6 @@
                         <div class="col">
                             <label for="proimage">
                                 <input type="file" accept="image/*" name="proimage" formControlName="proimage" id="proimage" class="pro-Pic-Upload" [(ngModel)]="guide.guideImage" (change)="getProImage($event)" required>
-                                <!-- <img id="proPic" class="pro-pic button-shadow" [src]="travel_pro_image" /> -->
                                 <img id="proPic" [ngClass]="profilePicture" *ngIf="proimage" [src]="travel_pro_image" />
                             </label>
                         </div>
@@ -47,48 +50,11 @@
                         <div class="col">
                             <label>Languages Speaking</label>
                         </div>
-                        <!-- <div class="col">
-                            <div class="row">
-                                <div class="col">
-                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
-                                </div>
-                                <div class="col">
-                                    <p class="language">Sinhala</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
-                                </div>
-                                <div class="col">
-                                    <p class="language">English</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
-                                </div>
-                                <div class="col">
-                                    <p class="language">Tamil</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="checkbox" id="languages-sin" name="languages" class="languages-check" />
-                                </div>
-                                <div class="col">
-                                    <p class="language">French</p>
-                                </div>
-                            </div>                            
-                        </div> -->
                         <ul *ngFor="let l of langList;" style="list-style: none;">
                             <li>
                                 <input [(ngModel)]="l.isChecked" (change)="changeSelection(l.langId)" type="checkbox" id="languages-sin" name="languages" class="languages-check" ><span style="color: white;">{{l.label}}</span>
                             </li>     
                         </ul>
-                        <!-- <div *ngFor="let l of selectedLanguages;">
-                            {{l}}
-                        </div> -->
                     </div>
                 </div>
             </div>

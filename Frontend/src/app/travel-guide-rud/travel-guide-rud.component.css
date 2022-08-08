@@ -79,3 +79,27 @@
     border: 1px solid rgb(4, 169, 155);
     box-shadow: 0px 0px 10px rgba(184, 173, 173, 0.984);
 }
+
+.backBtn{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid rgb(128, 128, 128);
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.backBtn:hover{
+    border: 2px solid black;
+}
+
+.backIcon{
+    width: 20px;
+}
+
+.backLabel{
+    font-size: 25px;
+    margin-left: 15px;
+    color: gray;
+}

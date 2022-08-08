@@ -71,7 +71,7 @@ button{
     background-color: green;
     color: white;
     width: 30%;
-    margin: 50px auto;
+    margin: 20px auto;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 0px;
@@ -99,4 +99,31 @@ button:hover{
     color: rgb(4, 169, 155);
     border: 1px solid rgb(4, 169, 155);
     box-shadow: 0px 0px 10px rgba(184, 173, 173, 0.984);
+}
+
+.backBtn{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid rgb(128, 128, 128);
+    padding: 15px;
+    margin-bottom: -15em;
+    margin-top: -10em;
+}
+
+.backBtn:hover{
+    border: 2px solid black;
+    background-color: transparent;
+    box-shadow: 0px 0px 0px transparent;
+}
+
+.backIcon{
+    width: 20px;
+}
+
+.backLabel{
+    font-size: 25px;
+    margin-left: 15px;
+    color: gray;
 }
