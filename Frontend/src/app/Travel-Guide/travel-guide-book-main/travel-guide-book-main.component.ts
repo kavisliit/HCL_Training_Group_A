@@ -13,6 +13,10 @@ export class TravelGuideBookMainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  back(){
+    this.router.navigate(["plantrip"]);
+  }
+
   redirectToBookGuide(){
     this.router.navigate(["bookGuide"]);
   }

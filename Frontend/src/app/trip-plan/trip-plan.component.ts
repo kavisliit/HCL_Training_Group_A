@@ -28,6 +28,10 @@ export class TripPlanComponent implements OnInit {
     this.router.navigate(["placelist"])
   }
 
+  seeTravelGuide(){
+    this.router.navigate(["bookGuideMain"])
+  }
+
   ngOnInit(): void {
     if (!localStorage.getItem("uid")) {
       location.href = "login"
