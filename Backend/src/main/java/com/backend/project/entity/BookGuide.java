@@ -2,8 +2,8 @@ package com.backend.project.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="bookedguides")
 public class BookGuide {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     @Column(name="guideId")
     int bookedGuideId;

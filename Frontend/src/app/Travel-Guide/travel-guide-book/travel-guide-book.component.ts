@@ -23,6 +23,7 @@ export class TravelGuideBookComponent implements OnInit {
   end!:Date;
   endDateTime:any;
   difference:any = 0;
+  uid!:number;
 
   constructor(
     private service:TravelGuideService,
@@ -33,6 +34,7 @@ export class TravelGuideBookComponent implements OnInit {
     this.service.getAllTravelGuides().subscribe(data => this.travelGuides = data);
     this.guide.price = 0;
     this.guide.noOfDays = 0;
+    this.uid = Number(localStorage.getItem("uid"))
   }
 
   back(){
@@ -119,6 +121,7 @@ export class TravelGuideBookComponent implements OnInit {
     }
 
     if(this.name.value.length > 0 && this.endDateTime.value.length > 0 && this.startDateTime.value.length > 0){
+      this.guide.id = this.uid;
       this.service.bookTravelGuide(this.guide).subscribe();
       alert("Travel Guide Booked Successfully");
     }

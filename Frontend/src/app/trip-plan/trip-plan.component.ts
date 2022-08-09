@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from '../Booking';
 import { BookingService } from '../Booking.service';
+import { TravelGuideService } from '../travel-guide.service';
 import { Vehicle } from '../Vehicle';
 import { Vehicle_Book } from '../Vehicle_Book.service';
 
@@ -15,10 +16,11 @@ export class TripPlanComponent implements OnInit {
   vehicle!: Vehicle
   pic!: string
   vid!: number
+  guideid!:number;
   havetrip: boolean = false
   have: boolean = false
   booking: Booking = new Booking()
-  constructor(private vehiclebookservice: Vehicle_Book, private bookingservice: BookingService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private vehiclebookservice: Vehicle_Book, private bookingservice: BookingService, private guideService: TravelGuideService, private router: Router, private route: ActivatedRoute) { }
 
   showvehicle() {
     this.router.navigate(["allvehicle"])
@@ -39,6 +41,7 @@ export class TripPlanComponent implements OnInit {
     this.uid = Number(localStorage.getItem("uid"))
     this.checkBookings()
     this.checkdestinations()
+    this.getBookedTravelGuide();
   }
 
   checkBookings() {
@@ -68,7 +71,12 @@ export class TripPlanComponent implements OnInit {
   }
 
 
-
+  getBookedTravelGuide(){
+    this.guideService.getBookedGuide(this.uid).subscribe((data:any) => {
+      this.guideid = data['id'];
+      console.log("Guide Id: "+ this.guideid);
+    });
+  }
 
 
   booktrip() {
@@ -90,6 +98,7 @@ export class TripPlanComponent implements OnInit {
     }
     this.booking.userid = this.uid
     this.booking.vbookid = this.vehicle.id
+    this.booking.guideid = this.guideid;
     this.bookingservice.createbooking(this.booking).subscribe(data => {
       let v: Booking = <Booking>data
       this.router.navigate(["summary", v.id])
