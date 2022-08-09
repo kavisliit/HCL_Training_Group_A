@@ -58,13 +58,12 @@ public class Vehicle_bookService {
     }
 
     public Vehicle checkBookingHave(int uid) {
-        List<Vehicle_Book> books = vehicle_bookRepository.findByUserid(uid);
-        if (books.size() > 0) {
-            Vehicle vehicle = vehicleRepository.findById(books.get(0).getVid()).get();
-            return vehicle;
-        } else {
-            return null;
-        }
+        Vehicle_Book books = vehicle_bookRepository.findById(uid).get();
+
+        Vehicle vehicle = vehicleRepository.findById(books.getVid()).get();
+
+        return vehicle;
+
     }
 
 }

@@ -16,8 +16,9 @@ export class TripPlanComponent implements OnInit {
   vehicle!: Vehicle
   pic!: string
   vid!: number
-  guideid!:number;
+  guideid!: number;
   havetrip: boolean = false
+  bid!: number
   have: boolean = false
   booking: Booking = new Booking()
   constructor(private vehiclebookservice: Vehicle_Book, private bookingservice: BookingService, private guideService: TravelGuideService, private router: Router, private route: ActivatedRoute) { }
@@ -30,7 +31,7 @@ export class TripPlanComponent implements OnInit {
     this.router.navigate(["placelist"])
   }
 
-  seeTravelGuide(){
+  seeTravelGuide() {
     this.router.navigate(["bookGuideMain"])
   }
 
@@ -45,6 +46,9 @@ export class TripPlanComponent implements OnInit {
   }
 
   checkBookings() {
+    if (localStorage.getItem("bid")) {
+      this.bid = Number(localStorage.getItem("bid"))
+    }
 
     if (localStorage.getItem("book")) {
       var s = localStorage.getItem("book")
@@ -57,7 +61,7 @@ export class TripPlanComponent implements OnInit {
       this.have = false
       return
     }
-    this.vehiclebookservice.checkBookHave(this.uid).subscribe(data => {
+    this.vehiclebookservice.checkBookHave(this.bid).subscribe(data => {
       var v: Vehicle = <Vehicle>data
       if (v) {
         this.vehicle = v
@@ -71,10 +75,10 @@ export class TripPlanComponent implements OnInit {
   }
 
 
-  getBookedTravelGuide(){
-    this.guideService.getBookedGuide(this.uid).subscribe((data:any) => {
+  getBookedTravelGuide() {
+    this.guideService.getBookedGuide(this.uid).subscribe((data: any) => {
       this.guideid = data['id'];
-      console.log("Guide Id: "+ this.guideid);
+      console.log("Guide Id: " + this.guideid);
     });
   }
 
