@@ -115,8 +115,13 @@ export class TripPlanComponent implements OnInit {
     if (localStorage.getItem("cart")) {
       let data: any = localStorage.getItem("cart")
       let arr = JSON.parse(data)
-      this.pic = arr[0].mimage
-      this.havetrip = true
+      if (arr.length > 0) {
+        this.pic = arr[0].mimage
+        this.havetrip = true
+      }
+      else {
+        this.havetrip = false
+      }
     }
     else {
       this.havetrip = false
