@@ -1,7 +1,7 @@
 .add_container_fluid {
     background-image: url('../../assets/Images/vehicle.jpg');
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh-100px);
     font-family: 'Roboto', sans-serif;
 }
 
