@@ -131,6 +131,11 @@ public class TravelGuideController {
         return this.travelGuideService.getAllBookGuides();
     }
 
+    @GetMapping("/book/getBookedGuide/{id}")
+    public BookGuide getBookedGuide(@PathVariable("id") int id){
+        return this.travelGuideService.getBookedGuide(id);
+    }
+
     @DeleteMapping("/book/delete/{id}")
     public String deleteBookedGuide(@PathVariable("id") int guideId){
         this.travelGuideService.deletebookedGuide(guideId);

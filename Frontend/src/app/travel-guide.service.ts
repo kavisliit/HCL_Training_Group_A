@@ -68,6 +68,10 @@ export class TravelGuideService {
     return this.http.get<BookedGuide[]>("http://localhost:8070/guide/book/getAll");
   }
 
+  public getBookedGuide(id:number){
+    return this.http.get("http://localhost:8070/guide/book/getBookedGuide/"+id);
+  }
+
   public deleteBookedGuide(id:number){
     return this.http.delete("http://localhost:8070/guide/book/delete/"+id);
   }

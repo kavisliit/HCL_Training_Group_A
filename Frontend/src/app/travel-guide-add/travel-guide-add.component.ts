@@ -104,8 +104,14 @@ export class TravelGuideAddComponent implements OnInit {
   //========== Calling Backend Api ===================================================================
   //add travel Guide
   public addTravelGuide(){
-    let response = this.service.addTravelGuide(this.guide, this.selectedGuideImage);
-    response.subscribe(data => this.message = data);
+    try{
+      let response = this.service.addTravelGuide(this.guide, this.selectedGuideImage);
+      response.subscribe(data => this.message = data);
+      alert("Travel Guide Added");
+    }catch(error){
+      console.error(error);
+    }
+    
   }
 
 }

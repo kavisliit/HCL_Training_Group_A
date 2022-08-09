@@ -82,6 +82,10 @@ public class TravelGuideService {
         return (List<BookGuide>) this.bookTravelGuideRepository.findAll();
     }
 
+    public BookGuide getBookedGuide(int id){
+        return (BookGuide) this.bookTravelGuideRepository.findById(id).get(0);
+    }
+
     public void deletebookedGuide(int guideId){
         this.bookTravelGuideRepository.deleteById(guideId);
     }
