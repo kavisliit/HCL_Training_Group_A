@@ -34,12 +34,12 @@ export class AppComponent implements OnInit {
 
     if (id) {
       localStorage.removeItem("uid")
-      location.href = "/login"
+      location.href = "/"
     }
     else if (localStorage.getItem("aid")) {
       localStorage.removeItem("aid")
       localStorage.removeItem("cart")
-      location.href = "/adminlogin"
+      location.href = "/"
     }
   }
   title = 'Frontend';
